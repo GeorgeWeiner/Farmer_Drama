@@ -13,9 +13,10 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] private float spawnY;
 
     [Header("Item Prefab & Settings")]
-    [SerializeField] private List<GameObject> Items;
     [SerializeField] private int maxItemOnField = 1;
-    [SerializeField] private float itemDropDespawnTimer = 10f;
+    [SerializeField] private float itemDropDespawnTimer = 20f;
+    [SerializeField] private int itemDropChance = 10;
+    [SerializeField] private List<GameObject> Items;
     #endregion Variables
 
     // Start is called before the first frame update
@@ -50,21 +51,27 @@ public class ItemSpawner : MonoBehaviour
         }
     }
     /// <summary>
-    /// Drops a random item on the dead enemy position (Drop Chance 10%)
+    /// Drops a random item on the dead enemy position (Drop Chance itemDropChance)
     /// </summary>
     /// <param name="_prefablist">List of GameObjects to be instantiated.</param>
     /// <param name="_enemyPos">Vector position of enemy</param>
     public void MobDrop(List<GameObject> _prefablist, Vector3 _enemyPos)
     {
-        int tempZuf = Random.Range(0, 10);
+        int tempZuf = Random.Range(0, itemDropChance);
         if(tempZuf == 0)
         {
             GameObject tempItemPrefab = _prefablist[Random.Range(0, _prefablist.Count - 1)];
             Instantiate(tempItemPrefab, _enemyPos, Quaternion.identity);
 
-            //StartCoroutine(DespawnItem(tempItemPrefab, itemDropDespawnTimer));
+            StartCoroutine(DespawnItem(tempItemPrefab, itemDropDespawnTimer));
         }
     }
+    /// <summary>
+    /// After how many seconds the dropped item should despawn.
+    /// </summary>
+    /// <param name="_droppedItem">Item to despawn.</param>
+    /// <param name="_itemDropDespawnTimer">After how many seconds the dropped item should despawn.</param>
+    /// <returns></returns>
     private IEnumerator DespawnItem(GameObject _droppedItem, float _itemDropDespawnTimer)
     {
         yield return new WaitForSeconds(_itemDropDespawnTimer);
