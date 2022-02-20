@@ -15,52 +15,49 @@ public class Player : MonoBehaviour
     Vector2 direction;
     bool isPlayerGrounded;
     bool isAttacking;
+    [SerializeField] LayerMask enemyLayer;
+    //PlayerWeaponCollider
+    [Header("PlayerWeapon")][SerializeField] Transform axe;
+    [SerializeField] float axeDmg;
+
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (!isAttacking)
-        {
-            PlayerMovement();
-        }
+
+        PlayerMovement();
 
         LookInMousePosition();
 
-        if (Input.GetMouseButton(0))
-        {
-            PlayerAnimator.SetBool("isAttacking", true);
-            isAttacking = true;
-        }
-        else
-        {
-            PlayerAnimator.SetBool("isAttacking", false);
-            isAttacking = false;
-        }
+        Attack();
 
     }
 
 
     void PlayerMovement()
     {
-        isPlayerGrounded = characterController.isGrounded;
-        if (isPlayerGrounded && velocity.y < 0)
+        if (!isAttacking)
         {
-            velocity.y = 0;
+            isPlayerGrounded = characterController.isGrounded;
+            if (isPlayerGrounded && velocity.y < 0)
+            {
+                velocity.y = 0;
+            }
+
+            Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+
+            movement = Vector3.ClampMagnitude(movement, 1) * playerSpeed * Time.deltaTime;
+
+            characterController.Move(movement);
+
+            animator.SetFloat("BlendY", Input.GetAxisRaw("Vertical"));
+            animator.SetFloat("BlendX", Input.GetAxisRaw("Horizontal"));
         }
-
-        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-
-        movement = Vector3.ClampMagnitude(movement, 1) * playerSpeed * Time.deltaTime;
-
-        characterController.Move(movement);
-
-        animator.SetFloat("BlendY", Input.GetAxisRaw("Vertical"));
-        animator.SetFloat("BlendX", Input.GetAxisRaw("Horizontal"));
 
     }
 
@@ -73,6 +70,28 @@ public class Player : MonoBehaviour
             Vector3 targetPosition = new Vector3(hit.point.x, 0f, hit.point.z);
             transform.LookAt(targetPosition);
             Debug.DrawLine(transform.position, targetPosition, Color.green);
+        }
+    }
+
+    void Attack()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            PlayerAnimator.SetBool("isAttacking", true);
+            isAttacking = true;
+            Collider[] enemys = Physics.OverlapSphere(axe.position, 0.5f, enemyLayer);
+            foreach(var obj in enemys)
+            {
+                if (obj.GetComponent<Stats>())
+                {
+                    obj.GetComponent<Stats>().TakeDmg(axeDmg);
+                }
+            }
+        }
+        else
+        {
+            PlayerAnimator.SetBool("isAttacking", false);
+            isAttacking = false;
         }
     }
 }

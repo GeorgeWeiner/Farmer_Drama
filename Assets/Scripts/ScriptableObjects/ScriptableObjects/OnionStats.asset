@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OnionStats
   m_EditorClassIdentifier: 
   name: 
-  health: 70
+  health: 20
   attackDamage: 2
   attackSpeed: 2
   movementSpeed: 4

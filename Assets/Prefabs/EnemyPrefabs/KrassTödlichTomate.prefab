@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 4980440447489902605}
   - component: {fileID: 2952582671430462366}
   - component: {fileID: 2944305888781663142}
+  - component: {fileID: 6147564679154170739}
   m_Layer: 0
   m_Name: "KrassT\xF6dlichTomate"
   m_TagString: Untagged
@@ -257,6 +258,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &6147564679154170739
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920865996492653648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!1 &3200539780151137414
 GameObject:
   m_ObjectHideFlags: 0

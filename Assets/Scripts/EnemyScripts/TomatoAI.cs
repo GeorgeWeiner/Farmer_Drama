@@ -32,7 +32,7 @@ public class TomatoAI : EnemyAI
             explosionTimer += Time.deltaTime;
             transform.localScale = Vector3.Lerp(transform.localScale,tomatoSizeToReach , explosionTimer * Time.deltaTime);
             GetComponent<Renderer>().material.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time * explosionBlinkSpeed,1));
-            Debug.Log(GetComponent<MeshRenderer>().material.color);
+            //Debug.Log(GetComponent<MeshRenderer>().material.color);
             yield return new WaitForEndOfFrame();
         }
         DealExplosionDmg();   
