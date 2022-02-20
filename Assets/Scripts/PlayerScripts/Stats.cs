@@ -16,10 +16,6 @@ public class Stats : MonoBehaviour,IDamageable
     {
         CopyStatsFromScriptable();
     }
-    private void Update()
-    {
-        TakeDmg(1 * Time.deltaTime);
-    }
     void CopyStatsFromScriptable()
     {
         health = statsOfThisObject.health;

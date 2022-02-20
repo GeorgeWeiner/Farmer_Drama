@@ -172,6 +172,7 @@ MonoBehaviour:
   explosionParticles: {fileID: 8716659444648367933, guid: cf18f3555f658544fae0d928eb14a6fc, type: 3}
   startColor: {r: 0, g: 0, b: 0, a: 0}
   endColor: {r: 1, g: 0.9203187, b: 0, a: 1}
+  explosionBlinkSpeed: 0
 --- !u!114 &5897541945508862167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +414,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cc13ce232b2017a418c2894612e9b41a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -509,7 +510,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cc13ce232b2017a418c2894612e9b41a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

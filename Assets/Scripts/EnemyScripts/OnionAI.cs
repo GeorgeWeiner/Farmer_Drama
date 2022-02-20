@@ -9,13 +9,9 @@ public class OnionAI : EnemyAI
     {
         if(CheckIfIsInAttackRange())
         {
+            Debug.Log("HEHEHEH");
             GetComponent<SphereCollider>().enabled = true;
             gasParticles.Play();
-        }
-        else
-        {
-            GetComponent<SphereCollider>().enabled = false;
-            gasParticles.Stop();
         }
     }
     private void OnTriggerStay(Collider other)
@@ -23,6 +19,13 @@ public class OnionAI : EnemyAI
         if (other.GetComponent<IDamageable>() != null && other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<IDamageable>().TakeDmg(stats.Dmg);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            gasParticles.Stop();
         }
     }
 }
