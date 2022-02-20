@@ -17,7 +17,5 @@ public class PauseMenuManager : MonoBehaviour
         Time.timeScale = !isPaused ? 1f : 0f;
         pauseMenu.SetActive(isPaused);
         isPaused = !isPaused;
-
-        Debug.LogFormat("Time-Scale: {0}", Time.timeScale);
     }
 }

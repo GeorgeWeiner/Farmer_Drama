@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c84be713-f4c8-4933-9bb9-2f6a5d0ae916" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/ButtonPauseStateResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/ButtonPauseStateResponse.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Farmer_Drama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Farmer_Drama/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/George Main Menu.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/George Main Menu.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/George Main Menu.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/George Main Menu/MainMenuPP.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/George Main Menu/MainMenuPP.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/PauseMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/PauseMenuManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1645374515494</updated>
-      <workItem from="1645374520858" duration="4903000" />
+      <workItem from="1645374520858" duration="6169000" />
     </task>
     <servers />
   </component>
