@@ -49,7 +49,7 @@ public abstract class EnemyAI : MonoBehaviour
     }
     void ChasePlayer()
     {
-        if(currentState == AIStates.chasing)
+        if(currentState == AIStates.chasing && player != null)
         {     
             agent.isStopped = false;
             agent.SetDestination(player.position);

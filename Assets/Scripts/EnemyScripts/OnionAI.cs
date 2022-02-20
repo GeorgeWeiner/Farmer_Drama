@@ -9,7 +9,6 @@ public class OnionAI : EnemyAI
     {
         if(CheckIfIsInAttackRange())
         {
-            transform.LookAt(player.position);
             GetComponent<SphereCollider>().enabled = true;
         }
     }

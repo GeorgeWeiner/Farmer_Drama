@@ -288,6 +288,36 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4298822840745672822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7346328314124896784}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7346328314124896784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298822840745672822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.263, z: 0.239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8855695776963456743}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5113279607312566796
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,6 +646,7 @@ Transform:
   - {fileID: 2886122666451026003}
   - {fileID: 6650610533185824645}
   - {fileID: 2231026225306509443}
+  - {fileID: 7346328314124896784}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -637,6 +668,7 @@ MonoBehaviour:
   attackCd: 2
   attackRange: 4
   pumpkinSeedProjectile: {fileID: 5035013524489664677, guid: 85e973519e8162c4dba63519206688ba, type: 3}
+  SpawnPoint: {fileID: 7346328314124896784}
 --- !u!114 &8855695776963456747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,7 +756,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.27, z: 0.4}
+  m_Size: {x: 0.31, y: 0.27, z: 0.4}
   m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!195 &8855695776963456742
 NavMeshAgent:
@@ -745,6 +777,6 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.18
-  m_BaseOffset: -0.09
+  m_BaseOffset: 0.03
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
