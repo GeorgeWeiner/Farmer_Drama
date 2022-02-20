@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 4635815661833229447}
   - component: {fileID: 2882110509955921198}
   - component: {fileID: 2516454665533880901}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KrassStinkigeOnion
   m_TagString: Enemy
   m_Icon: {fileID: 0}

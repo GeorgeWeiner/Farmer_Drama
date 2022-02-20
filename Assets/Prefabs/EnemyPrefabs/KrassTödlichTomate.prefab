@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 2952582671430462366}
   - component: {fileID: 2944305888781663142}
   - component: {fileID: 6147564679154170739}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "KrassT\xF6dlichTomate"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

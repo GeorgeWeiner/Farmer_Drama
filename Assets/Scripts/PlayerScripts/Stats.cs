@@ -22,7 +22,6 @@ public class Stats : MonoBehaviour,IDamageable
         dmg = statsOfThisObject.attackDamage;
         attackSpeed = statsOfThisObject.attackSpeed;
         speed = statsOfThisObject.movementSpeed;
-        Debug.Log(speed);
     }
     public void TakeDmg(float dmg)
     {
