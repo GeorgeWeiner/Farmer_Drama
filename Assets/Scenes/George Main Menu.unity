@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 133205190}
   - component: {fileID: 133205189}
   m_Layer: 5
-  m_Name: Mushrooms
+  m_Name: FarmerDrama (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,8 +250,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -578, y: 209}
-  m_SizeDelta: {x: 935.19, y: 57.04}
+  m_AnchoredPosition: {x: -591, y: 230}
+  m_SizeDelta: {x: 935.19, y: 153.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133205189
 MonoBehaviour:
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -2.5862503}
+  m_margin: {x: 0, y: 0, z: 0, w: -44.168045}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -792,7 +792,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -586, y: 148.45999}
-  m_SizeDelta: {x: 418.36, y: 73.07}
+  m_SizeDelta: {x: 582.09, y: 73.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &515592437
 MonoBehaviour:
@@ -1518,7 +1518,7 @@ GameObject:
   - component: {fileID: 679957455}
   - component: {fileID: 679957454}
   m_Layer: 5
-  m_Name: Mushrooms
+  m_Name: FarmerDrama (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1540,8 +1540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -578, y: -110}
-  m_SizeDelta: {x: 935.19, y: 67.44}
+  m_AnchoredPosition: {x: -591, y: -93}
+  m_SizeDelta: {x: 935.19, y: 153.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679957454
 MonoBehaviour:
@@ -1628,7 +1628,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -1.2867432}
+  m_margin: {x: 0, y: 0, z: 0, w: -44.168045}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2578,7 +2578,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -586, y: -172}
-  m_SizeDelta: {x: 418.36, y: 73.07}
+  m_SizeDelta: {x: 582.09, y: 73.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1304810320
 MonoBehaviour:
@@ -2821,8 +2821,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorLoopSpeed: 1
-  hsvValue: 0
-  _camera: {fileID: 0}
 --- !u!114 &1371862163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2884,7 +2882,7 @@ GameObject:
   - component: {fileID: 1470073338}
   - component: {fileID: 1470073337}
   m_Layer: 5
-  m_Name: Mushrooms
+  m_Name: FarmerDrama (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2906,8 +2904,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -581.25, y: 43}
-  m_SizeDelta: {x: 941.69, y: 55.74}
+  m_AnchoredPosition: {x: -591, y: 65}
+  m_SizeDelta: {x: 935.19, y: 153.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1470073337
 MonoBehaviour:
@@ -2992,7 +2990,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -1.299427, z: 0, w: 1.3120289}
+  m_margin: {x: 0, y: 0, z: 0, w: -44.168045}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3352,7 +3350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -581, y: 411}
+  m_AnchoredPosition: {x: -581, y: 451}
   m_SizeDelta: {x: 935.19, y: 153.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1561961101
@@ -3408,7 +3406,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3438,7 +3436,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -193.61533, z: 0, w: -29.887016}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3889,7 +3887,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -586, y: -15}
-  m_SizeDelta: {x: 418.36, y: 73.07}
+  m_SizeDelta: {x: 582.09, y: 73.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781921376
 MonoBehaviour:
