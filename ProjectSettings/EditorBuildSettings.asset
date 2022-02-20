@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/George Main Menu.unity
+    path: Assets/Scenes/George/George Main Menu.unity
     guid: 09a63a9e4ffa401c5b81289840e83928
   - enabled: 1
     path: Assets/Import/PolygonFarm/Demo/Demo.unity
