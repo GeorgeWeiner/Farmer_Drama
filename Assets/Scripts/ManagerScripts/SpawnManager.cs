@@ -7,7 +7,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] List<GameObject> allEnemies;
     [SerializeField] List<GameObject> currentlyAliveEnemies;
     [SerializeField] List<GameObject> allSpawnPoints;
-    [SerializeField] float amountToSpawn;
+    [SerializeField] float amountOfEnemiesToSpawn;
+    [SerializeField] float delayBeetweenWaves;
     static public SpawnManager instance;
     
     private void Awake()
@@ -23,24 +24,29 @@ public class SpawnManager : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(SpawnEnemies(amountToSpawn));
+        StartCoroutine(SpawnEnemies());
     }
     void Update()
     {
         checkIfAllEnemiesAreDead();   
     }
-    IEnumerator SpawnEnemies(float amountToSpawn)
+    IEnumerator SpawnEnemies()
     {
         float delayBetweenEnemySpawn = 1;
-        for (int i = 0; i < amountToSpawn ; i++)
+        for (int i = 0; i < amountOfEnemiesToSpawn ; i++)
         {
             int randomSpawnPoint = Random.Range(0, allSpawnPoints.Count);
             int randomEnemy = Random.Range(0,allEnemies.Count);
             var tempEnemy = Instantiate(allEnemies[randomEnemy], allSpawnPoints[randomSpawnPoint].transform.position, transform.rotation);
             currentlyAliveEnemies.Add(tempEnemy);
             yield return new WaitForSeconds(delayBetweenEnemySpawn);
+            Debug.Log(i);
         }
         yield return new WaitUntil(checkIfAllEnemiesAreDead);
+        amountOfEnemiesToSpawn += 4;
+        Debug.Log("Waiting");
+        yield return new WaitForSeconds(delayBeetweenWaves);
+        StartCoroutine(SpawnEnemies());
     }
     bool checkIfAllEnemiesAreDead()
     {
@@ -54,15 +60,8 @@ public class SpawnManager : MonoBehaviour
         }
         
     }
-    public void RemoveKilledEnemies()
-    {
-        for (int i = 0; i < currentlyAliveEnemies.Count; i++)
-        {
-            if(currentlyAliveEnemies[i] == null)
-            {
-                currentlyAliveEnemies.Remove(currentlyAliveEnemies[i]);
-                return;
-            }
-        }
+    public void RemoveKilledEnemies(GameObject enemyToRemove)
+    {         
+        currentlyAliveEnemies.Remove(enemyToRemove);
     }
 }

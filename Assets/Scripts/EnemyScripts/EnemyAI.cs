@@ -13,22 +13,22 @@ public abstract class EnemyAI : MonoBehaviour
         attacking
     }
     [SerializeField] protected LayerMask playerLayer;
-    [SerializeField] float attackCd;
-    [SerializeField] float attackRange;
+    [SerializeField] protected float attackCd;
+    [SerializeField] protected float attackRange;
     AIStates currentState;
     public AIStates CurrentState { set { currentState = value; } }
     protected Transform player;
     protected NavMeshAgent agent;
     protected Stats stats;
     protected bool canAttack = true;
-    void Awake()
+    protected virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         stats = GetComponent<Stats>();
         agent = GetComponent<NavMeshAgent>();
         
     }
-    private void Start()
+    void Start()
     {
         agent.speed = stats.Speed;
     }
@@ -56,7 +56,7 @@ public abstract class EnemyAI : MonoBehaviour
         }
     }
     protected abstract void AttackPlayer();
-    bool CheckIfIsInAttackRange()
+    protected bool CheckIfIsInAttackRange()
     {
         return Physics.CheckSphere(transform.position, attackRange,playerLayer);
     }
