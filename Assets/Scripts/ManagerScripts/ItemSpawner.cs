@@ -13,10 +13,10 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] private float spawnY;
 
     [Header("Item Prefab & Settings")]
-    [SerializeField] private List<GameObject> Items;
     [SerializeField] private int maxItemOnField = 1;
     [SerializeField] private float itemDropDespawnTimer = 20f;
     [SerializeField] private int itemDropChance = 10;
+    [SerializeField] private List<GameObject> Items;
     #endregion Variables
 
     // Start is called before the first frame update
