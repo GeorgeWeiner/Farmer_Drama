@@ -6,7 +6,7 @@ public class EnemyDeath : Death
 {
     public override void OnDie()
     {
-        SpawnManager.instance.RemoveKilledEnemies();
+        SpawnManager.instance.RemoveKilledEnemies(this.gameObject);
         Destroy(gameObject);
     }
 }
