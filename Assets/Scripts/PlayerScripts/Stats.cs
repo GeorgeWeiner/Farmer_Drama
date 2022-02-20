@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof (Death))]
 public class Stats : MonoBehaviour,IDamageable
 {
     [SerializeField] ScriptableStats statsOfThisObject;
-    float health;
+    [SerializeField] float health;
     public float Health { get { return health; } set { health = value; } }
     float attackSpeed;
     public float AttackSpeed { get { return attackSpeed; } set {attackSpeed = value; } }

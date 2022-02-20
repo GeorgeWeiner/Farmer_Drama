@@ -14,17 +14,34 @@ public class Player : MonoBehaviour
     Vector3 velocity;
     Vector2 direction;
     bool isPlayerGrounded;
+    bool isAttacking;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        PlayerMovement();
+        if (!isAttacking)
+        {
+            PlayerMovement();
+        }
+
         LookInMousePosition();
+
+        if (Input.GetMouseButton(0))
+        {
+            PlayerAnimator.SetBool("isAttacking", true);
+            isAttacking = true;
+        }
+        else
+        {
+            PlayerAnimator.SetBool("isAttacking", false);
+            isAttacking = false;
+        }
+
     }
 
 
@@ -51,7 +68,7 @@ public class Player : MonoBehaviour
     {
         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(mouseRay, out RaycastHit hit))
+        if (Physics.Raycast(mouseRay, out RaycastHit hit))
         {
             Vector3 targetPosition = new Vector3(hit.point.x, 0f, hit.point.z);
             transform.LookAt(targetPosition);
