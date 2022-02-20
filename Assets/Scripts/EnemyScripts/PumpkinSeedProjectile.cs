@@ -5,7 +5,8 @@ using UnityEngine;
 public class PumpkinSeedProjectile : MonoBehaviour
 {
     [SerializeField] float projectileForce;
-    [SerializeField] float dmg;
+    float dmg;
+    public float Dmg { set { dmg = value; } }
     Rigidbody projectileRb;
 
     // Start is called before the first frame update
@@ -13,6 +14,7 @@ public class PumpkinSeedProjectile : MonoBehaviour
     {
         projectileRb = GetComponent<Rigidbody>();
         InitProjectile();
+        Destroy(gameObject, 2);
     }
     void InitProjectile()
     {
@@ -20,14 +22,10 @@ public class PumpkinSeedProjectile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<IDamageable>() != null && !other.gameObject.CompareTag("Enemy"))
+        if (other.GetComponent<IDamageable>() != null && !other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<IDamageable>().TakeDmg(dmg);
             Destroy(gameObject);
-        }
-        else 
-        {
-            Destroy(gameObject);
-        }
+        }    
     }
 }

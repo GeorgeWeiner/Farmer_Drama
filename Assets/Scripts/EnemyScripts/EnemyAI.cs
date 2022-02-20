@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof (NavMeshAgent))]
+[RequireComponent(typeof(Stats))]
 public abstract class EnemyAI : MonoBehaviour
 {   
     public enum AIStates
@@ -18,11 +19,18 @@ public abstract class EnemyAI : MonoBehaviour
     public AIStates CurrentState { set { currentState = value; } }
     protected Transform player;
     protected NavMeshAgent agent;
+    protected Stats stats;
     protected bool canAttack = true;
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        stats = GetComponent<Stats>();
         agent = GetComponent<NavMeshAgent>();
+        
+    }
+    private void Start()
+    {
+        agent.speed = stats.Speed;
     }
 
     // Update is called once per frame
