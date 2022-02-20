@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 7cf2f1ba721c6b84f8cc77864b186c3e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Gadimon
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e73aa758231234afb9d3d094f820e2bf, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
