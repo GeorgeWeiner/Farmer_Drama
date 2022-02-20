@@ -622,7 +622,8 @@ GameObject:
   - component: {fileID: 8855695776963456741}
   - component: {fileID: 8855695776963456742}
   - component: {fileID: 7716594353366676975}
-  m_Layer: 0
+  - component: {fileID: 4570738852981918709}
+  m_Layer: 7
   m_Name: Pumpkin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -637,7 +638,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8855695776963456739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.9645534, y: 4.9645534, z: 4.9645534}
   m_Children:
   - {fileID: 5514278341319462316}
@@ -780,3 +781,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.4
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!95 &4570738852981918709
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8855695776963456739}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 772d27caf422eb4459fd93e283b836d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
