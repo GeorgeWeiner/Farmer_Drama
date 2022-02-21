@@ -1,19 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] GameObject upgradeUI;
-    [SerializeField] List<GameObject> allEnemies;
-    [SerializeField] List<GameObject> currentlyAliveEnemies;
-    [SerializeField] List<GameObject> allSpawnPoints;
-    [SerializeField] float amountOfEnemiesToSpawn;
-    [SerializeField] float delayBeetweenWaves;
-    [SerializeField] List<GameObject> upgradeList;
-    [SerializeField] List<GameObject> upgradePosition;
+    [SerializeField] private GameObject upgradeUI;
+    [SerializeField] private List<GameObject> allEnemies;
+    [SerializeField] private List<GameObject> currentlyAliveEnemies;
+    [SerializeField] private List<GameObject> allSpawnPoints;
+    [SerializeField] private float amountOfEnemiesToSpawn;
+    [SerializeField] private float delayBeetweenWaves;
+    [SerializeField] private List<GameObject> upgradeList;
+    [SerializeField] private List<GameObject> upgradePosition;
     static public SpawnManager instance;
-    bool upgradeSelected = false;
+
+    public event Action OnWaveBegin;
+
+    private bool upgradeSelected = false;
     public bool UpgradSelected { get { return upgradeSelected; } set { upgradeSelected = value; } }
 
     private void Awake()
@@ -35,12 +40,16 @@ public class SpawnManager : MonoBehaviour
         upgradePosition[0].AddComponent<Upgrade>();
         //upgradeList[0].GetComponent<Upgrade>();
     }
-    void Update()
+
+    private void Update()
     {
         CheckIfAllEnemiesAreDead();
     }
-    IEnumerator SpawnEnemies()
+
+    private IEnumerator SpawnEnemies()
     {
+        OnWaveBegin?.Invoke();
+
         float delayBetweenEnemySpawn = 0.5f;
         for (int i = 0; i < amountOfEnemiesToSpawn ; i++)
         {
@@ -57,7 +66,8 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitUntil(DeactivateUpgradeUI);
         StartCoroutine(SpawnEnemies());
     }
-    bool CheckIfAllEnemiesAreDead()
+
+    private bool CheckIfAllEnemiesAreDead()
     {
         if (currentlyAliveEnemies.Count <= 0)
         {
@@ -74,7 +84,7 @@ public class SpawnManager : MonoBehaviour
         currentlyAliveEnemies.Remove(enemyToRemove);
     }
 
-    void ActivateUpgradeUI()
+    private void ActivateUpgradeUI()
     {
         upgradeUI.gameObject.SetActive(true);
         Time.timeScale = 0;

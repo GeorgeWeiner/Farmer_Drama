@@ -12,7 +12,8 @@ public enum ESoundType
     ItemDrop,
     HealthUp,
     Upgrade,
-    CocainIsGoingCrazy
+    CocainIsGoingCrazy,
+    OnWaveBegin
 }
 
 

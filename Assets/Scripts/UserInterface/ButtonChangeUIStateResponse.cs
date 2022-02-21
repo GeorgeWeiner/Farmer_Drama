@@ -15,16 +15,16 @@ namespace UserInterface
 
         private void ChangeUIState()
         {
-            foreach (var uiObject in objectsToActivate)
+            foreach (var obj in objectsToActivate)
             {
-                Debug.LogFormat("Activating {0}", uiObject.name);
-                uiObject.SetActive(true);
+                Debug.LogFormat("Activating {0}", obj.name);
+                obj.SetActive(true);
             }
 
-            foreach (var uiObject in objectsToDeactivate)
+            foreach (var obj in objectsToDeactivate)
             {
-                Debug.LogFormat("Deactivating {0}", uiObject.name);
-                uiObject.SetActive(false);
+                Debug.LogFormat("Deactivating {0}", obj.name);
+                obj.SetActive(false);
             }
         }
     }
