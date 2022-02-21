@@ -10,7 +10,11 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] List<GameObject> allSpawnPoints;
     [SerializeField] float amountOfEnemiesToSpawn;
     [SerializeField] float delayBeetweenWaves;
+    [SerializeField] List<GameObject> upgradeList;
+    [SerializeField] List<GameObject> upgradePosition;
     static public SpawnManager instance;
+    bool upgradeSelected = false;
+    public bool UpgradSelected { get { return upgradeSelected; } set { upgradeSelected = value; } }
 
     private void Awake()
     {
@@ -26,6 +30,10 @@ public class SpawnManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnEnemies());
+        //upgradePosition[0] = Instantiate(upgradeList[0]);
+        
+        upgradePosition[0].AddComponent<Upgrade>();
+        //upgradeList[0].GetComponent<Upgrade>();
     }
     void Update()
     {
@@ -73,15 +81,16 @@ public class SpawnManager : MonoBehaviour
     }
     public bool DeactivateUpgradeUI()
     {
-        if (Time.timeScale == 0)
+        if (Time.timeScale == 0 && upgradeSelected)
         {
-            return false;
+            Time.timeScale = 1;
+            upgradeUI.gameObject.SetActive(false);
+            upgradeSelected = false;
+            return true;
         }
         else
         {
-            upgradeUI.gameObject.SetActive(false);
-            Time.timeScale = 1;
-            return true;
+            return false;
         }
     }
 }

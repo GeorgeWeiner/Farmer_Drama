@@ -5,22 +5,24 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-public abstract class Upgrade : MonoBehaviour
+public class Upgrade : MonoBehaviour
 {
-    [SerializeField] Image UpgradeImg;
+    [SerializeField] Image upgradeImg;
+    public Image UpgradeImage => upgradeImg;
 
     [SerializeField] [TextArea(10, 10)] protected string description;
     public string Description => description;
 
     private void Awake()
     {
-        UpgradeImg.gameObject.AddComponent<EventTrigger>();
-        AddEvent(EventTriggerType.PointerClick, delegate { UpgradeFunction(UpgradeImg.gameObject); }, UpgradeImg.gameObject);
+        gameObject.AddComponent<EventTrigger>();
+        AddEvent(EventTriggerType.PointerClick, delegate { UpgradeFunction(gameObject); }, gameObject);
     }
 
 
     protected virtual void UpgradeFunction(GameObject upgradeImage)
     {
+        SpawnManager.instance.UpgradSelected = true;
         SpawnManager.instance.DeactivateUpgradeUI();
     }
 
