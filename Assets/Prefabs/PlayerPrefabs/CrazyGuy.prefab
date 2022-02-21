@@ -612,9 +612,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3979905432890682888}
+  - component: {fileID: 3976972108328017283}
+  - component: {fileID: 21206386823932510}
+  - component: {fileID: 8772900573748336659}
   - component: {fileID: 3920252918290227186}
   - component: {fileID: 3976972108328017282}
-  - component: {fileID: 3976972108328017283}
+  - component: {fileID: 8752065944111416433}
   m_Layer: 3
   m_Name: CrazyGuy
   m_TagString: Player
@@ -643,6 +646,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3976972108328017283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976972108328017280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47303f304983066499aec39824823ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 4
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  axe: {fileID: 8167815014429133202}
+  axeDmg: 10
+--- !u!114 &21206386823932510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976972108328017280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8a5a9305b06ce4d899aca93ab40080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsOfThisObject: {fileID: 11400000, guid: d2c4629bd07c8d543b9255c96f2a4ade, type: 2}
+  health: 0
+--- !u!114 &8772900573748336659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976972108328017280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956bba990f4411c4cba7f35e7ef23616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &3920252918290227186
 Animator:
   serializedVersion: 3
@@ -680,24 +727,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &3976972108328017283
-MonoBehaviour:
+--- !u!136 &8752065944111416433
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3976972108328017280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47303f304983066499aec39824823ec4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: 4
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  axe: {fileID: 8167815014429133202}
-  axeDmg: 10
+  m_Radius: 0.83
+  m_Height: 2.34
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &3976972549487381412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,13 +2555,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5be75d5ca4632148b3b88be731396f1, type: 3}
---- !u!4 &8167815014429133202 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7365227712780118564, guid: e5be75d5ca4632148b3b88be731396f1, type: 3}
-  m_PrefabInstance: {fileID: 1688678259278586806}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1684420458831223336 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4257951475874206, guid: e5be75d5ca4632148b3b88be731396f1, type: 3}
+  m_PrefabInstance: {fileID: 1688678259278586806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8167815014429133202 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7365227712780118564, guid: e5be75d5ca4632148b3b88be731396f1, type: 3}
   m_PrefabInstance: {fileID: 1688678259278586806}
   m_PrefabAsset: {fileID: 0}

@@ -33,15 +33,14 @@ public class SpawnManager : MonoBehaviour
     }
     IEnumerator SpawnEnemies()
     {
-        float delayBetweenEnemySpawn = 1;
-        for (int i = 0; i < amountOfEnemiesToSpawn; i++)
+        float delayBetweenEnemySpawn = 0.5f;
+        for (int i = 0; i < amountOfEnemiesToSpawn ; i++)
         {
             int randomSpawnPoint = Random.Range(0, allSpawnPoints.Count);
             int randomEnemy = Random.Range(0, allEnemies.Count);
             var tempEnemy = Instantiate(allEnemies[randomEnemy], allSpawnPoints[randomSpawnPoint].transform.position, transform.rotation);
             currentlyAliveEnemies.Add(tempEnemy);
             yield return new WaitForSeconds(delayBetweenEnemySpawn);
-            Debug.Log(i);
         }
         yield return new WaitUntil(CheckIfAllEnemiesAreDead);
         amountOfEnemiesToSpawn += 4;

@@ -48,6 +48,7 @@ public class TomatoAI : EnemyAI
             }
         }
         var tempParticles = Instantiate(explosionParticles, transform.position, transform.rotation);
+        GetComponent<IOnDie>().OnDie();
         Destroy(gameObject);
     }
 }
