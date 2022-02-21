@@ -11,7 +11,7 @@ public class TomatoAI : EnemyAI
     protected override void Awake()
     {
         base.Awake();
-        startColor = GetComponent<Renderer>().material.color;
+        startColor = GetComponentInChildren<Renderer>().material.color;
     }
     protected override void AttackPlayer()
     {
@@ -25,13 +25,13 @@ public class TomatoAI : EnemyAI
     IEnumerator Explode()
     {
         float explosionTimer = 0;
-        Vector3 tomatoSizeToReach = transform.localScale + Vector3.one * 4;
+        Vector3 tomatoSizeToReach = transform.localScale + Vector3.one / 2;
         while (attackCd >= 0)
         {
             attackCd -= Time.deltaTime;
             explosionTimer += Time.deltaTime;
             transform.localScale = Vector3.Lerp(transform.localScale,tomatoSizeToReach , explosionTimer * Time.deltaTime);
-            GetComponent<Renderer>().material.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time * explosionBlinkSpeed,1));
+            GetComponentInChildren<Renderer>().material.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time * explosionBlinkSpeed,1));
             yield return new WaitForEndOfFrame();
         }
         DealExplosionDmg();   

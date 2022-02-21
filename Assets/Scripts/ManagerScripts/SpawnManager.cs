@@ -2,18 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class SpawnManager : MonoBehaviour
-{
-    [SerializeField] private GameObject upgradeUI;
-    [SerializeField] private List<GameObject> allEnemies;
-    [SerializeField] private List<GameObject> currentlyAliveEnemies;
-    [SerializeField] private List<GameObject> allSpawnPoints;
-    [SerializeField] private float amountOfEnemiesToSpawn;
-    [SerializeField] private float delayBeetweenWaves;
-    [SerializeField] private List<GameObject> upgradeList;
-    [SerializeField] private List<GameObject> upgradePosition;
+{   [SerializeField] GameObject upgradeUI;
+    [SerializeField] GameObject player;
+    [SerializeField] List<GameObject> allEnemies;
+    [SerializeField] List<GameObject> currentlyAliveEnemies;
+    [SerializeField] List<GameObject> allSpawnPoints;
+    [SerializeField] float amountOfEnemiesToSpawn;
+    [SerializeField] float delayBeetweenWaves;
+    [SerializeField] List<Upgrade> upgradeList;
+    [SerializeField] List<GameObject> upgradeButtons;
     static public SpawnManager instance;
 
     public event Action OnWaveBegin;
@@ -31,14 +33,11 @@ public class SpawnManager : MonoBehaviour
         {
             Destroy(this);
         }
+
     }
     private void Start()
     {
         StartCoroutine(SpawnEnemies());
-        //upgradePosition[0] = Instantiate(upgradeList[0]);
-        
-        upgradePosition[0].AddComponent<Upgrade>();
-        //upgradeList[0].GetComponent<Upgrade>();
     }
 
     private void Update()
@@ -61,8 +60,8 @@ public class SpawnManager : MonoBehaviour
         }
         yield return new WaitUntil(CheckIfAllEnemiesAreDead);
         amountOfEnemiesToSpawn += 4;
-        Debug.Log("Waiting");
         ActivateUpgradeUI();
+        GetRandomUpgrade();
         yield return new WaitUntil(DeactivateUpgradeUI);
         StartCoroutine(SpawnEnemies());
     }
@@ -79,12 +78,35 @@ public class SpawnManager : MonoBehaviour
         }
 
     }
+    void GetRandomUpgrade()
+    {
+        for (int i = 0; i < upgradeButtons.Count; i++)
+        {
+            int randomUpgrade = Random.Range(0, upgradeList.Count);
+            var tempImage = upgradeButtons[i].AddComponent<Image>();
+            tempImage.sprite = upgradeList[randomUpgrade].UpgradeImage;
+            AddEvent(EventTriggerType.PointerClick, delegate { upgradeList[randomUpgrade].UpgradeFunction(player); } ,upgradeButtons[i]);  
+        }    
+    }
+    private void ResetUpgrades()
+    {
+        for (int i = 0; i < upgradeButtons.Count; i++)
+        {
+            Component[] components = upgradeButtons[i].GetComponents<Component>();
+            foreach (var componentsOnThisObject in components)
+            {
+                if (!Types.Equals(componentsOnThisObject, upgradeButtons[i].GetComponent<RectTransform>()) && !Types.Equals(componentsOnThisObject, upgradeButtons[i].GetComponent<CanvasRenderer>()))
+                {
+                    Destroy(componentsOnThisObject);
+                }   
+            }
+        }
+    }
     public void RemoveKilledEnemies(GameObject enemyToRemove)
     {
         currentlyAliveEnemies.Remove(enemyToRemove);
     }
-
-    private void ActivateUpgradeUI()
+    void ActivateUpgradeUI()
     {
         upgradeUI.gameObject.SetActive(true);
         Time.timeScale = 0;
@@ -93,6 +115,7 @@ public class SpawnManager : MonoBehaviour
     {
         if (Time.timeScale == 0 && upgradeSelected)
         {
+            ResetUpgrades();
             Time.timeScale = 1;
             upgradeUI.gameObject.SetActive(false);
             upgradeSelected = false;
@@ -102,5 +125,13 @@ public class SpawnManager : MonoBehaviour
         {
             return false;
         }
+    }
+    protected void AddEvent(EventTriggerType type, UnityAction<BaseEventData> action, GameObject button)
+    {
+        EventTrigger trigger = button.AddComponent<EventTrigger>();
+        var eventTrigger = new EventTrigger.Entry();
+        eventTrigger.eventID = type;
+        eventTrigger.callback.AddListener(action);
+        trigger.triggers.Add(eventTrigger);
     }
 }

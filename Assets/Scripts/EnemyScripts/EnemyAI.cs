@@ -25,7 +25,7 @@ public abstract class EnemyAI : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         stats = GetComponent<Stats>();
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponentInParent<NavMeshAgent>();
         
     }
     void Start()
