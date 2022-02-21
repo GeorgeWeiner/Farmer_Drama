@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c4832ab7c80e764fb4d295e8b82c8a3, type: 3}
+  m_Script: {fileID: 11500000, guid: e3cb718f2aac050128507bf13ed3ff88, type: 3}
   m_Name: ScytheUpgrade
   m_EditorClassIdentifier: 
   upgradeImg: {fileID: 21300000, guid: 83fec3ad1acf5f04dac482bc8ad7fc96, type: 3}
