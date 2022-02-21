@@ -12,18 +12,17 @@ public abstract class EnemyAI : MonoBehaviour
         chasing,
         attacking
     }
-    [SerializeField] protected LayerMask playerLayer;
+    [SerializeField] protected LayerMask targetLayer;
     [SerializeField] protected float attackCd;
     [SerializeField] protected float attackRange;
-    AIStates currentState;
+    protected AIStates currentState;
     public AIStates CurrentState { set { currentState = value; } }
-    protected Transform player;
+    protected Transform target;
     protected NavMeshAgent agent;
     protected Stats stats;
     protected bool canAttack = true;
     protected virtual void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         stats = GetComponent<Stats>();
         agent = GetComponentInParent<NavMeshAgent>();
         
@@ -34,31 +33,31 @@ public abstract class EnemyAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (!CheckIfIsInAttackRange())
         {
             currentState = AIStates.chasing;
-            ChasePlayer();
+            ChaseTarget();
         }
         else
         {
             currentState = AIStates.attacking;
-            AttackPlayer();
+            AttackTarget();
         }
     }
-    void ChasePlayer()
+    protected virtual void ChaseTarget()
     {
-        if(currentState == AIStates.chasing && player != null)
+        if(currentState == AIStates.chasing && target != null)
         {     
             agent.isStopped = false;
-            agent.SetDestination(player.position);
+            agent.SetDestination(target.position);
         }
     }
-    protected abstract void AttackPlayer();
+    protected abstract void AttackTarget();
     protected bool CheckIfIsInAttackRange()
     {
-        return Physics.CheckSphere(transform.position, attackRange,playerLayer);
+        return Physics.CheckSphere(transform.position, attackRange,targetLayer);
     }
     protected IEnumerator AttackCd()
     {

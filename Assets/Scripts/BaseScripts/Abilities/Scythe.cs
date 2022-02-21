@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Scythe : MonoBehaviour
 {
+    
     [SerializeField] float rotationSpeed;
     [SerializeField] float scytheRotationSpeed;
     [SerializeField] float dmg;
-    [SerializeField] float maxDistance;
     [SerializeField] Transform player;
     public Transform Player { get { return player; } set { player = value; } }
     private void Update()

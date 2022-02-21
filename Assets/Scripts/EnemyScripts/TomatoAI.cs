@@ -10,10 +10,11 @@ public class TomatoAI : EnemyAI
     [SerializeField] float explosionBlinkSpeed;
     protected override void Awake()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         base.Awake();
         startColor = GetComponentInChildren<Renderer>().material.color;
     }
-    protected override void AttackPlayer()
+    protected override void AttackTarget()
     {
         agent.isStopped = true;
         if (canAttack)
@@ -38,7 +39,7 @@ public class TomatoAI : EnemyAI
     }
     void DealExplosionDmg()
     {
-        Collider[] player = Physics.OverlapSphere(transform.position, attackRange, playerLayer);
+        Collider[] player = Physics.OverlapSphere(transform.position, attackRange, targetLayer);
         foreach (var hitables in player )
         {
             if(hitables.GetComponent<IDamageable>() != null)

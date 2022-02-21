@@ -12,5 +12,4 @@ public class RotatingScythe : Upgrade
         tempObj.GetComponent<Scythe>().Player = player.transform;
         tempObj.transform.SetParent(player.transform, false);
     }
-
 }

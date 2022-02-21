@@ -5,7 +5,12 @@ using UnityEngine;
 public class OnionAI : EnemyAI
 {
     [SerializeField] ParticleSystem gasParticles;
-    protected override void AttackPlayer()
+    protected override void Awake()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        base.Awake();
+    }
+    protected override void AttackTarget()
     {
         if(CheckIfIsInAttackRange())
         {

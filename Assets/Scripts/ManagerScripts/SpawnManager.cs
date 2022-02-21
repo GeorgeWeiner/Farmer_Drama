@@ -64,6 +64,7 @@ public class SpawnManager : MonoBehaviour
         ActivateUpgradeUI();
         GetRandomUpgrade();
         yield return new WaitUntil(DeactivateUpgradeUI);
+        yield return new WaitForSeconds(delayBeetweenWaves);
         StartCoroutine(SpawnEnemies());
     }
 
