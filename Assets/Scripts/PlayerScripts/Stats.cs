@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Wenn du die Upgrade Fuktion verwenden willst, solltest du direkt darunter die Methode "ResetTempStats()" machen, damit sie
-// die Statsüberschreiben (ohne dem Reset könnte es sonst zur Stacking-Problemen kommen (TempBuffs mit UpgradeStats ->
-// TempBuffs würden als Fixwert überschrieben)), bei Fragen melden
+// die Statsï¿½berschreiben (ohne dem Reset kï¿½nnte es sonst zur Stacking-Problemen kommen (TempBuffs mit UpgradeStats ->
+// TempBuffs wï¿½rden als Fixwert ï¿½berschrieben)), bei Fragen melden
 public class Stats : MonoBehaviour,IDamageable
 {
     [SerializeField] ScriptableStats statsOfThisObject;
