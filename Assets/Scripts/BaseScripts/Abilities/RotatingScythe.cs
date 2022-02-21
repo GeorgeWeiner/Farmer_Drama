@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class RotatingScythe : MonoBehaviour
+[CreateAssetMenu(fileName = "Upgrade", menuName = "NewUpgrade/Scythe", order = 1)]
+public class RotatingScythe : Upgrade
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject scythe;
+    public override void UpgradeFunction(GameObject player)
     {
-        
+        SpawnManager.instance.UpgradSelected = true;
+        var tempObj = Instantiate(scythe, player.transform.position + Vector3.forward / 2, Quaternion.identity);
+        tempObj.GetComponent<Scythe>().Player = player.transform;
+        tempObj.transform.SetParent(player.transform, false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

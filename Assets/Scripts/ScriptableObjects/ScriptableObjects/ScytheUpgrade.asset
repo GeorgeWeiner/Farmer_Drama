@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9389e7305d148294fac01c22c5b6928a, type: 3}
+  m_Name: ScytheUpgrade
+  m_EditorClassIdentifier: 
+  upgradeImg: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  description: 
+  scythe: {fileID: 1983903536892367032, guid: feaef0ff0087b964d82a85d6ed0af18e, type: 3}
