@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[CreateAssetMenu(fileName = "Upgrade", menuName = "NewUpgrade/DmgUp", order = 0)]
 public class DamageUp : Upgrade
 {
-    protected override void UpgradeFunction(GameObject upgradeImage)
+    [SerializeField] ScriptableStats playerStats;
+    public override void UpgradeFunction()
     {
-        Debug.Log("HEllo");
-        base.UpgradeFunction(upgradeImage);
+        playerStats.attackDamage += 20;
+        SpawnManager.instance.UpgradSelected = true;
     }
 }
