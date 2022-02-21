@@ -6361,7 +6361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &493163946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17040,6 +17040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeUI: {fileID: 493163945}
+  player: {fileID: 1796131113}
   allEnemies:
   - {fileID: 8855695776963456739, guid: f0dd863cefc1240458ce1ab80371a9a1, type: 3}
   - {fileID: 2920865996492653648, guid: 112f1607a02cb64458e36de2be0e7a6f, type: 3}
@@ -21299,6 +21300,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsOfThisObject: {fileID: 11400000, guid: d2c4629bd07c8d543b9255c96f2a4ade, type: 2}
   health: 0
+  attackSpeed: 0
+  speed: 0
+  dmg: 0
+  isOnCocain: 0
+  isOnBoosterVaccination: 0
 --- !u!114 &1796131119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21311,7 +21317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47303f304983066499aec39824823ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 4
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128

@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class SpawnManager : MonoBehaviour
 {   [SerializeField] GameObject upgradeUI;
+    [SerializeField] GameObject player;
     [SerializeField] List<GameObject> allEnemies;
     [SerializeField] List<GameObject> currentlyAliveEnemies;
     [SerializeField] List<GameObject> allSpawnPoints;
@@ -75,7 +76,7 @@ public class SpawnManager : MonoBehaviour
             int randomUpgrade = Random.Range(0, upgradeList.Count);
             var tempImage = upgradeButtons[i].AddComponent<Image>();
             tempImage.sprite = upgradeList[randomUpgrade].UpgradeImage;
-            AddEvent(EventTriggerType.PointerClick, delegate { upgradeList[randomUpgrade].UpgradeFunction(upgradeButtons[randomUpgrade]); } ,upgradeButtons[i]);  
+            AddEvent(EventTriggerType.PointerClick, delegate { upgradeList[randomUpgrade].UpgradeFunction(player); } ,upgradeButtons[i]);  
         }    
     }
     private void ResetUpgrades()

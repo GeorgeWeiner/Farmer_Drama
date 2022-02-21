@@ -31,7 +31,6 @@ public abstract class Items : MonoBehaviour
     {
         gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
         gameObject.GetComponent<Collider>().enabled = false;
-
         yield return new WaitForSeconds(_timer);
     }
 }

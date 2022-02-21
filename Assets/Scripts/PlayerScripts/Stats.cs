@@ -9,20 +9,18 @@ public class Stats : MonoBehaviour,IDamageable
 {
     [SerializeField] ScriptableStats statsOfThisObject;
     [SerializeField] float health;
-    float currentHealth;
     public float Health { get { return health; } set { health = value; } }
-
     [SerializeField] float attackSpeed;
-    float currentAttackSpeed;
     public float AttackSpeed { get { return attackSpeed; } set {attackSpeed = value; } }
-
     [SerializeField] float speed;
-    float currentSpeed;
     public float Speed { get { return speed; } set { speed = value; } }
-
-    [SerializeField] float dmg;
-    float currentdmg;
+    [SerializeField] float dmg; 
     public float Dmg { get { return dmg; } set { dmg = value; } }
+
+    float currentHealth;
+    float currentAttackSpeed;
+    float currentSpeed;
+    float currentdmg;
 
     [Header("Buff States")]
     [SerializeField] private bool isOnCocain;
