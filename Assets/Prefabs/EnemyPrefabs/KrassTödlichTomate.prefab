@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 2952582671430462366}
   - component: {fileID: 2944305888781663142}
   - component: {fileID: 6147564679154170739}
+  - component: {fileID: 8319043944005103896}
   m_Layer: 7
   m_Name: "KrassT\xF6dlichTomate"
   m_TagString: Untagged
@@ -127,7 +128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2920865996492653648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.39999998, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 16.196, y: 16.196, z: 16.196}
   m_Children:
   - {fileID: 5739978161250157950}
@@ -271,6 +272,25 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.25
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!95 &8319043944005103896
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920865996492653648}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 772d27caf422eb4459fd93e283b836d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3200539780151137414
 GameObject:
   m_ObjectHideFlags: 0

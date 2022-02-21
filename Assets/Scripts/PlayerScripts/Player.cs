@@ -79,12 +79,12 @@ public class Player : MonoBehaviour
         {
             PlayerAnimator.SetBool("isAttacking", true);
             isAttacking = true;
-            Collider[] enemys = Physics.OverlapSphere(axe.position, 0.5f, enemyLayer);
+            Collider[] enemys = Physics.OverlapSphere(axe.position, 0.1f, enemyLayer);
             foreach(var obj in enemys)
             {
-                if (obj.GetComponent<Stats>())
+                if (obj.GetComponent<IDamageable>() != null)
                 {
-                    obj.GetComponent<Stats>().TakeDmg(axeDmg);
+                    obj.GetComponent<IDamageable>().TakeDmg(axeDmg);
                 }
             }
         }
@@ -94,5 +94,6 @@ public class Player : MonoBehaviour
             isAttacking = false;
         }
     }
+
 }
 

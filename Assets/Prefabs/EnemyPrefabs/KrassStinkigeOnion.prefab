@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 4635815661833229447}
   - component: {fileID: 2882110509955921198}
   - component: {fileID: 2516454665533880901}
+  - component: {fileID: 3355150767017448940}
   m_Layer: 7
   m_Name: KrassStinkigeOnion
   m_TagString: Enemy
@@ -129,7 +130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4745329248478193070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96352386, y: 0.88, z: 0.8006737}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.573176, y: 6.573176, z: 6.573176}
   m_Children:
   - {fileID: 1549837475449683102}
@@ -5043,6 +5044,25 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.25
   m_Center: {x: 0, y: 0.18, z: 0}
+--- !u!95 &3355150767017448940
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745329248478193070}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 772d27caf422eb4459fd93e283b836d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5830028174730451051
 GameObject:
   m_ObjectHideFlags: 0
