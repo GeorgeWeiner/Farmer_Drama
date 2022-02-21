@@ -25,7 +25,7 @@ public class TomatoAI : EnemyAI
     IEnumerator Explode()
     {
         float explosionTimer = 0;
-        Vector3 tomatoSizeToReach = transform.localScale + Vector3.one * 4;
+        Vector3 tomatoSizeToReach = transform.localScale + Vector3.one / 2;
         while (attackCd >= 0)
         {
             attackCd -= Time.deltaTime;
