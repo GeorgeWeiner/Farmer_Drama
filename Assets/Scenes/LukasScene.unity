@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4570738852981918709, guid: f0dd863cefc1240458ce1ab80371a9a1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8855695776963456739, guid: f0dd863cefc1240458ce1ab80371a9a1, type: 3}
       propertyPath: m_Name
       value: Pumpkin
@@ -137,6 +141,10 @@ PrefabInstance:
     - target: {fileID: 8855695776963456739, guid: f0dd863cefc1240458ce1ab80371a9a1, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855695776963456742, guid: f0dd863cefc1240458ce1ab80371a9a1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8855695776963456743, guid: f0dd863cefc1240458ce1ab80371a9a1, type: 3}
       propertyPath: m_RootOrder
@@ -487,6 +495,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4980440447489902605, guid: 112f1607a02cb64458e36de2be0e7a6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6147564679154170739, guid: 112f1607a02cb64458e36de2be0e7a6f, type: 3}
       propertyPath: m_Center.y
       value: 0.09
@@ -527,6 +539,10 @@ PrefabInstance:
     - target: {fileID: 2516454665533880901, guid: 3b6bae1f72679934b970dacd8f46a558, type: 3}
       propertyPath: m_Center.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534584197810027595, guid: 3b6bae1f72679934b970dacd8f46a558, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2534584197810027595, guid: 3b6bae1f72679934b970dacd8f46a558, type: 3}
       propertyPath: m_BaseOffset
