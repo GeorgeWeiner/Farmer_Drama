@@ -12,13 +12,13 @@ public class Player : MonoBehaviour
 
     CharacterController characterController;
     Vector3 velocity;
-    Vector2 direction;
     bool isPlayerGrounded;
     bool isAttacking;
     [SerializeField] LayerMask enemyLayer;
-    //PlayerWeaponCollider
-    [Header("PlayerWeapon")][SerializeField] Transform axe;
+    //PlayerWeapon
+    [Header("PlayerWeapon")] [SerializeField] Transform axe;
     [SerializeField] float axeDmg;
+    bool isHittingOnce;
 
 
     void Start()
@@ -41,6 +41,9 @@ public class Player : MonoBehaviour
 
     void PlayerMovement()
     {
+        Vector3 playerheight = new Vector3(transform.position.x, 0f, transform.position.z);
+        transform.position = playerheight;
+
         if (!isAttacking)
         {
             isPlayerGrounded = characterController.isGrounded;
@@ -77,21 +80,26 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            PlayerAnimator.SetBool("isAttacking", true);
             isAttacking = true;
+            PlayerAnimator.SetBool("isAttacking", isAttacking);
             Collider[] enemys = Physics.OverlapSphere(axe.position, 0.1f, enemyLayer);
-            foreach(var obj in enemys)
+            if (!isHittingOnce)
             {
-                if (obj.GetComponent<IDamageable>() != null)
+                isHittingOnce = true;
+                foreach (var obj in enemys)
                 {
-                    obj.GetComponent<IDamageable>().TakeDmg(axeDmg);
+                    if (obj.GetComponent<IDamageable>() != null)
+                    {
+                        obj.GetComponent<IDamageable>().TakeDmg(axeDmg);
+                    }
                 }
             }
         }
         else
         {
-            PlayerAnimator.SetBool("isAttacking", false);
+            isHittingOnce = false;
             isAttacking = false;
+            PlayerAnimator.SetBool("isAttacking", isAttacking);
         }
     }
 
