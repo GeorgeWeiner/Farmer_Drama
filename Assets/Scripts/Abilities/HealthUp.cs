@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthUp : MonoBehaviour
+[CreateAssetMenu(fileName = "Upgrade", menuName = "NewUpgrade/HealthUp", order = 2)]
+public class HealthUp : Upgrade
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float healthUpValue;
+    public override void UpgradeFunction(GameObject player)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player.GetComponent<Stats>().Health += healthUpValue;
     }
 }

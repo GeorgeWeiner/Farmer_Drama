@@ -5,6 +5,7 @@ using UnityEngine;
 public class Scythe : MonoBehaviour
 {
     [SerializeField] float rotationSpeed;
+    [SerializeField] float scytheRotationSpeed;
     [SerializeField] float dmg;
     [SerializeField] float maxDistance;
     [SerializeField] Transform player;
@@ -12,13 +13,18 @@ public class Scythe : MonoBehaviour
     private void Update()
     {
         RotateAroundPlayer();
+        Rotate();
     }
     void RotateAroundPlayer()
     {
         if(Time.timeScale == 1)
         {
-            transform.RotateAround(new Vector3(player.position.x,0,player.position.z), Vector3.up, rotationSpeed * Time.deltaTime);
+            transform.RotateAround(player.position , player.up, rotationSpeed * Time.deltaTime);
         }   
+    }
+    void Rotate()
+    {
+        transform.Rotate(Vector3.up * scytheRotationSpeed * Time.deltaTime);
     }
     private void OnTriggerEnter(Collider other)
     {

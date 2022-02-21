@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
         if (Physics.Raycast(mouseRay, out RaycastHit hit))
         {
             Vector3 targetPosition = new Vector3(hit.point.x, 0f, hit.point.z);
-            transform.LookAt(targetPosition);
+            transform.LookAt(new Vector3(targetPosition.x,transform.position.y,targetPosition.z));
             Debug.DrawLine(transform.position, targetPosition, Color.green);
         }
     }
