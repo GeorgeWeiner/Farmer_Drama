@@ -9,7 +9,7 @@ public class OnionAI : EnemyAI
     {
         if(CheckIfIsInAttackRange())
         {
-            GetComponent<SphereCollider>().enabled = true;
+            GetComponentInChildren<SphereCollider>().enabled = true;
         }
     }
     private void OnTriggerStay(Collider other)

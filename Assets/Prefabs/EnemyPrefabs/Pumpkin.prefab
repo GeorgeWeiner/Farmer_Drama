@@ -615,13 +615,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8855695776963456743}
-  - component: {fileID: 8855695776963456745}
-  - component: {fileID: 8855695776963456747}
-  - component: {fileID: 8855695776963456744}
   - component: {fileID: 8855695776963456740}
   - component: {fileID: 8855695776963456741}
-  - component: {fileID: 8855695776963456742}
-  - component: {fileID: 7716594353366676975}
   - component: {fileID: 4570738852981918709}
   m_Layer: 7
   m_Name: Pumpkin
@@ -651,51 +646,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8855695776963456745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8855695776963456739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8225c4ea42c94a4b8eebef1aebceb75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  attackCd: 2
-  attackRange: 4
-  pumpkinSeedProjectile: {fileID: 5035013524489664677, guid: 85e973519e8162c4dba63519206688ba, type: 3}
-  SpawnPoint: {fileID: 7346328314124896784}
---- !u!114 &8855695776963456747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8855695776963456739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e6e5794da672644a2fa7471b78607f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8855695776963456744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8855695776963456739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae8a5a9305b06ce4d899aca93ab40080, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statsOfThisObject: {fileID: 11400000, guid: a63ac7baf7421ce49ac1ab9329997ebf, type: 2}
-  health: 0
 --- !u!33 &8855695776963456740
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -746,41 +696,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!195 &8855695776963456742
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8855695776963456739}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.35
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.18
-  m_BaseOffset: 0.03
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!135 &7716594353366676975
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8855695776963456739}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!95 &4570738852981918709
 Animator:
   serializedVersion: 3
