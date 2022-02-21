@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("PlayerSpeed")] [SerializeField] float playerSpeed;
-    public float PlayerSpeed { get { return playerSpeed; } set { playerSpeed = value; } }
+    private Stats stats;
 
     Animator animator;
     public Animator PlayerAnimator { get { return animator; } set { animator = value; } }
@@ -23,13 +22,13 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        stats = GetComponent<Stats>();
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-
         PlayerMovement();
 
         LookInMousePosition();
@@ -51,7 +50,7 @@ public class Player : MonoBehaviour
 
             Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
-            movement = Vector3.ClampMagnitude(movement, 1) * playerSpeed * Time.deltaTime;
+            movement = Vector3.ClampMagnitude(movement, 1) * stats.Speed * Time.deltaTime;
 
             characterController.Move(movement);
 
@@ -78,6 +77,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             PlayerAnimator.SetBool("isAttacking", true);
+            PlayerAnimator.speed = stats.AttackSpeed;
             isAttacking = true;
             Collider[] enemys = Physics.OverlapSphere(axe.position, 0.1f, enemyLayer);
             foreach(var obj in enemys)
