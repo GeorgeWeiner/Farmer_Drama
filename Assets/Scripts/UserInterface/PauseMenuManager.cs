@@ -4,6 +4,7 @@ using UnityEngine;
 public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject musicPlayer;
     private bool isPaused;
 
     private void Awake()
@@ -23,6 +24,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         Time.timeScale = isPaused ? 0f : 1f;
         pauseMenu.SetActive(isPaused);
+        musicPlayer.SetActive(!isPaused);
         isPaused = !isPaused;
     }
 }

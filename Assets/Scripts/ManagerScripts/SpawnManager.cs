@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoBehaviour
 {   [SerializeField] GameObject upgradeUI;
@@ -16,7 +18,10 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] List<Upgrade> upgradeList;
     [SerializeField] List<GameObject> upgradeButtons;
     static public SpawnManager instance;
-    bool upgradeSelected = false;
+
+    public event Action OnWaveBegin;
+
+    private bool upgradeSelected = false;
     public bool UpgradSelected { get { return upgradeSelected; } set { upgradeSelected = value; } }
 
     private void Awake()
@@ -35,12 +40,16 @@ public class SpawnManager : MonoBehaviour
     {
         StartCoroutine(SpawnEnemies());
     }
-    void Update()
+
+    private void Update()
     {
         CheckIfAllEnemiesAreDead();
     }
-    IEnumerator SpawnEnemies()
+
+    private IEnumerator SpawnEnemies()
     {
+        OnWaveBegin?.Invoke();
+
         float delayBetweenEnemySpawn = 0.5f;
         for (int i = 0; i < amountOfEnemiesToSpawn ; i++)
         {
@@ -57,7 +66,8 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitUntil(DeactivateUpgradeUI);
         StartCoroutine(SpawnEnemies());
     }
-    bool CheckIfAllEnemiesAreDead()
+
+    private bool CheckIfAllEnemiesAreDead()
     {
         if (currentlyAliveEnemies.Count <= 0)
         {
