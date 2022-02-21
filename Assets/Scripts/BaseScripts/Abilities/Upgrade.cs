@@ -12,6 +12,6 @@ public abstract class Upgrade : ScriptableObject
 
     [SerializeField] [TextArea(10, 10)] protected string description;
     public string Description => description;
-    public abstract void UpgradeFunction(GameObject button);
+    public abstract void UpgradeFunction(GameObject player);
     
 }
