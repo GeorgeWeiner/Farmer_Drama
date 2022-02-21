@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public abstract class Upgrade : ScriptableObject
 {
-    [SerializeField] Image upgradeImg;
-    public Image UpgradeImage => upgradeImg;
+    [SerializeField] Sprite upgradeImg;
+    public Sprite UpgradeImage => upgradeImg;
 
     [SerializeField] [TextArea(10, 10)] protected string description;
     public string Description => description;
-    public abstract void UpgradeFunction();
+    public abstract void UpgradeFunction(GameObject button);
    
 }

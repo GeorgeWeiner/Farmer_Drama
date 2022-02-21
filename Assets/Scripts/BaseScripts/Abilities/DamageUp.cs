@@ -5,8 +5,9 @@ using UnityEngine;
 public class DamageUp : Upgrade
 {
     [SerializeField] ScriptableStats playerStats;
-    public override void UpgradeFunction()
+    public override void UpgradeFunction(GameObject button)
     {
+        Debug.Log("HEHEHEHEHH");
         playerStats.attackDamage += 20;
         SpawnManager.instance.UpgradSelected = true;
     }

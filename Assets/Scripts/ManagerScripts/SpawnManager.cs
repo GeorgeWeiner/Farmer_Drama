@@ -53,9 +53,7 @@ public class SpawnManager : MonoBehaviour
         amountOfEnemiesToSpawn += 4;
         ActivateUpgradeUI();
         GetRandomUpgrade();
-        Debug.Log("HELLLLOKOKOKOK");
         yield return new WaitUntil(DeactivateUpgradeUI);
-        Debug.Log("HEHEHEHE");
         StartCoroutine(SpawnEnemies());
     }
     bool CheckIfAllEnemiesAreDead()
@@ -76,8 +74,8 @@ public class SpawnManager : MonoBehaviour
         {
             int randomUpgrade = Random.Range(0, upgradeList.Count);
             var tempImage = upgradeButtons[i].AddComponent<Image>();
-            tempImage = upgradeList[randomUpgrade].UpgradeImage;
-            AddEvent(EventTriggerType.PointerClick, delegate { upgradeList[randomUpgrade].UpgradeFunction(); }, upgradeButtons[i]);  
+            tempImage.sprite = upgradeList[randomUpgrade].UpgradeImage;
+            AddEvent(EventTriggerType.PointerClick, delegate { upgradeList[randomUpgrade].UpgradeFunction(upgradeButtons[randomUpgrade]); } ,upgradeButtons[i]);  
         }    
     }
     private void ResetUpgrades()
@@ -108,7 +106,6 @@ public class SpawnManager : MonoBehaviour
         if (Time.timeScale == 0 && upgradeSelected)
         {
             ResetUpgrades();
-            Debug.Log("HELLLLOwwwwwwwwwwwwwwwwwKOKOKOK");
             Time.timeScale = 1;
             upgradeUI.gameObject.SetActive(false);
             upgradeSelected = false;
@@ -121,7 +118,7 @@ public class SpawnManager : MonoBehaviour
     }
     protected void AddEvent(EventTriggerType type, UnityAction<BaseEventData> action, GameObject button)
     {
-        EventTrigger trigger = button.GetComponent<EventTrigger>();
+        EventTrigger trigger = button.AddComponent<EventTrigger>();
         var eventTrigger = new EventTrigger.Entry();
         eventTrigger.eventID = type;
         eventTrigger.callback.AddListener(action);
