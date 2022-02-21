@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoBehaviour
 {   [SerializeField] GameObject upgradeUI;
