@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
+using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {   [SerializeField] GameObject upgradeUI;
@@ -15,6 +16,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] List<GameObject> allSpawnPoints;
     [SerializeField] List<Upgrade> upgradeList;
     [SerializeField] List<GameObject> upgradeButtons;
+    [SerializeField] TextMeshProUGUI [] upgradeText;
     [SerializeField] float amountOfEnemiesToSpawn;
     [SerializeField] float delayBeetweenWaves;
     static public SpawnManager instance;
@@ -83,11 +85,13 @@ public class SpawnManager : MonoBehaviour
     }
     void GetRandomUpgrade()
     {
+        
         for (int i = 0; i < upgradeButtons.Count; i++)
         {
             int randomUpgrade = Random.Range(0, upgradeList.Count);
             var tempImage = upgradeButtons[i].AddComponent<Image>();
             tempImage.sprite = upgradeList[randomUpgrade].UpgradeImage;
+            upgradeText[i].text = upgradeList[randomUpgrade].Description;
             AddEvent(EventTriggerType.PointerClick, delegate { upgradeList[randomUpgrade].UpgradeFunction(player); } ,upgradeButtons[i]);  
         }    
     }
@@ -128,6 +132,10 @@ public class SpawnManager : MonoBehaviour
         {
             return false;
         }
+    }
+    public void ShowUpgradeText(Upgrade upgradeText)
+    {
+
     }
     protected void AddEvent(EventTriggerType type, UnityAction<BaseEventData> action, GameObject button)
     {

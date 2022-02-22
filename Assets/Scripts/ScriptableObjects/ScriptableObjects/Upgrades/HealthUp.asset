@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d6d1e3d19d689459a59d63a6856353, type: 3}
   m_Name: HealthUp
   m_EditorClassIdentifier: 
-  upgradeImg: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  description: 
+  upgradeImg: {fileID: 21300000, guid: 98d5f4d582d427e42a90474e0fd0db48, type: 3}
+  description: asdasda
   healthUpValue: 20
