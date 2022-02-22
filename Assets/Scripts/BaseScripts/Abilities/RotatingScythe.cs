@@ -11,6 +11,6 @@ public class RotatingScythe : Upgrade
         SpawnManager.instance.UpgradSelected = true;
         var tempObj = Instantiate(scythe, player.transform.position , Quaternion.identity);
         tempObj.GetComponent<Scythe>().Player = player.transform;
-        tempObj.transform.SetParent(player.transform, false);
+        tempObj.GetComponent<Scythe>().RotationPoint = GameObject.FindGameObjectWithTag("RotationPoint").transform;
     }
 }

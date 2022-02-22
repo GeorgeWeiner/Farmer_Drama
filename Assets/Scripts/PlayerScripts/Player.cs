@@ -102,6 +102,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            SoundManager.instance.PlayAudioClip(ESoundType.EnemyHit, GetComponent<AudioSource>());
             animator.SetBool("isAttacking", true);
             animator.speed = stats.AttackSpeed;
             isAttacking = true;
@@ -114,6 +115,7 @@ public class Player : MonoBehaviour
                 {
                     if (obj.GetComponent<IDamageable>() != null)
                     {
+                        SoundManager.instance.PlayAudioClip(ESoundType.PlayerAttack, GetComponent<AudioSource>());
                         obj.GetComponent<IDamageable>().TakeDmg(stats.Dmg);
                     }
                 }

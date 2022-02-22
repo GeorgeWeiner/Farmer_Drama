@@ -20,8 +20,7 @@ public class DoggoAI : EnemyAI
     protected override void AttackTarget()
     {
         if (canAttack)
-        {
-           
+        { 
             int counter = 0;
             StartCoroutine(AttackCd());
             Collider[] attackableTargets = Physics.OverlapSphere(transform.position + Vector3.forward,attackRange,targetLayer);
@@ -38,16 +37,21 @@ public class DoggoAI : EnemyAI
     {
         if (CheckIfEnemiesAreInSight() && currentState == AIStates.chasing)
         {
+            agent.isStopped = false;
             target = GameObject.FindGameObjectWithTag("Enemy").transform;
             agent.SetDestination(target.position);
-            Debug.Log(target);
         }
-        else if(CalculateDistanceToPlayer() >= 0.7f)
+        else if(CalculateDistanceToPlayer() >= 4f)
         {
+            agent.isStopped = false;
             target = player.transform;
             agent.SetDestination(target.position);
             
-        }  
+        }
+        else
+        {
+            agent.isStopped = true;
+        }
     }
     bool CheckIfEnemiesAreInSight()
     {

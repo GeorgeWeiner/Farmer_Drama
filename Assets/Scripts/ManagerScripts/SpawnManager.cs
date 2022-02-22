@@ -13,10 +13,10 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] List<GameObject> allEnemies;
     [SerializeField] List<GameObject> currentlyAliveEnemies;
     [SerializeField] List<GameObject> allSpawnPoints;
-    [SerializeField] float amountOfEnemiesToSpawn;
-    [SerializeField] float delayBeetweenWaves;
     [SerializeField] List<Upgrade> upgradeList;
     [SerializeField] List<GameObject> upgradeButtons;
+    [SerializeField] float amountOfEnemiesToSpawn;
+    [SerializeField] float delayBeetweenWaves;
     static public SpawnManager instance;
 
     public event Action OnWaveBegin;
@@ -49,7 +49,8 @@ public class SpawnManager : MonoBehaviour
     private IEnumerator SpawnEnemies()
     {
         OnWaveBegin?.Invoke();
-
+        SoundManager.instance.PlayAudioClip(ESoundType.OnWaveBegin, GetComponent<AudioSource>());
+        yield return new WaitForSeconds(3);
         float delayBetweenEnemySpawn = 0.5f;
         for (int i = 0; i < amountOfEnemiesToSpawn ; i++)
         {

@@ -4,23 +4,35 @@ using UnityEngine;
 
 public class Scythe : MonoBehaviour
 {
-    
     [SerializeField] float rotationSpeed;
     [SerializeField] float scytheRotationSpeed;
     [SerializeField] float dmg;
+    [SerializeField] float maxDistance;
     [SerializeField] Transform player;
+    [SerializeField] Transform rotationPoint;
+    public Transform RotationPoint { get { return rotationPoint; }set { rotationPoint = value; } }
     public Transform Player { get { return player; } set { player = value; } }
     private void Update()
     {
         RotateAroundPlayer();
         Rotate();
+        MoveTowardsPlayer();
     }
     void RotateAroundPlayer()
     {
+        rotationPoint.position = player.position;
         if(Time.timeScale == 1)
         {
-            transform.RotateAround(player.position , player.up, rotationSpeed * Time.deltaTime);
+            transform.RotateAround(rotationPoint.position , rotationPoint.up, rotationSpeed * Time.deltaTime);
         }   
+    }
+    void MoveTowardsPlayer()
+    {
+        if(Mathf.Sqrt((player.transform.position - transform.position).sqrMagnitude) >= maxDistance)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * 5);
+        }
+        
     }
     void Rotate()
     {

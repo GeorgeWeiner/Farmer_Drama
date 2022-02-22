@@ -7,6 +7,7 @@ public enum ESoundType
     Enemy,
     PlayerVoice,
     PlayerAttack,
+    EnemyHit,
     EnemyDies,
     GameOver,
     ItemDrop,
@@ -81,7 +82,7 @@ public class SoundFile
     [SerializeField] AudioClip audioClip;
     public AudioClip AudioClip => audioClip;
 
-    [SerializeField] float volume;
+    [SerializeField][Range(0,1)] float volume;
     public float Volume => volume;
 
     [SerializeField] float offSet;
