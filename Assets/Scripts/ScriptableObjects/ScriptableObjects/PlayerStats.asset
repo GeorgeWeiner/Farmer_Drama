@@ -16,4 +16,4 @@ MonoBehaviour:
   health: 20000
   attackDamage: 20
   attackSpeed: 1.5
-  movementSpeed: 4
+  movementSpeed: 6
