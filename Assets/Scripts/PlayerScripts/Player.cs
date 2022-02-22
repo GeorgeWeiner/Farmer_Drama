@@ -6,20 +6,19 @@ public class Player : MonoBehaviour
 {
     private Stats stats;
 
-    Animator animator;
-    public Animator PlayerAnimator { get { return animator; } set { animator = value; } }
-    Ray mouseRay;
     CharacterController characterController;
+    Animator animator;
+    Ray mouseRay;
     Vector3 velocity;
     bool isPlayerGrounded;
     bool isAttacking;
     [SerializeField] LayerMask enemyLayer;
+
     //PlayerWeapon
     [Header("PlayerWeapon")] [SerializeField] Transform axe;
-    [SerializeField] float axeDmg;
     bool isHittingOnce;
 
-    //Playerdirections
+    //Player Animation directions
     Vector3 rightCornerUp;
     Vector3 leftCornerUp;
     Vector3 rightCornerDown;
@@ -31,9 +30,9 @@ public class Player : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         rightCornerUp = new Vector3(transform.rotation.x, 45f, transform.rotation.z);
-        leftCornerUp = new Vector3(transform.rotation.x, -45f, transform.rotation.z);
+        leftCornerUp = new Vector3(transform.rotation.x, 315f, transform.rotation.z);
         rightCornerDown = new Vector3(transform.rotation.x, 135f, transform.rotation.z);
-        leftCornerDown = new Vector3(transform.rotation.x, -135f, transform.rotation.z);
+        leftCornerDown = new Vector3(transform.rotation.x, 225f, transform.rotation.z);
     }
 
     void Update()
@@ -43,9 +42,7 @@ public class Player : MonoBehaviour
         LookInMousePosition();
 
         Attack();
-
     }
-
 
     void PlayerMovement()
     {
@@ -66,33 +63,28 @@ public class Player : MonoBehaviour
 
             characterController.Move(movement);
 
-            if (transform.localEulerAngles.y <= rightCornerUp.y && transform.localEulerAngles.y >= leftCornerUp.y)
+            //Movement Animations
+            if (transform.localEulerAngles.y <= rightCornerUp.y || transform.localEulerAngles.y >= leftCornerUp.y)
             {
-                Debug.Log("LinksOben, rechtsOben");
                 animator.SetFloat("BlendY", Input.GetAxisRaw("Vertical"));
                 animator.SetFloat("BlendX", Input.GetAxisRaw("Horizontal"));
             }
-            else if(transform.localEulerAngles.y >= rightCornerUp.y && transform.localEulerAngles.y <= rightCornerDown.y)
+            if(transform.localEulerAngles.y >= rightCornerUp.y && transform.localEulerAngles.y <= rightCornerDown.y)
             {
-                Debug.Log("rechtsOben, rechtsUnten");
                 animator.SetFloat("BlendX", -Input.GetAxisRaw("Vertical"));
                 animator.SetFloat("BlendY", Input.GetAxisRaw("Horizontal"));
             }
-            else if (transform.localEulerAngles.y >= leftCornerDown.y && transform.localEulerAngles.y >= leftCornerUp.y)
+            if (transform.localEulerAngles.y >= leftCornerDown.y && transform.localEulerAngles.y <= leftCornerUp.y)
             {
-                Debug.Log("linksUnten, linksOben");
                 animator.SetFloat("BlendX", Input.GetAxisRaw("Vertical"));
                 animator.SetFloat("BlendY", -Input.GetAxisRaw("Horizontal"));
             }
-            else if(transform.localEulerAngles.y >= rightCornerDown.y && transform.localEulerAngles.y >= leftCornerDown.y)
+            if(transform.localEulerAngles.y >= rightCornerDown.y && transform.localEulerAngles.y <= leftCornerDown.y)
             {
-                Debug.Log("rechtsUnten, linksUnten");
                 animator.SetFloat("BlendY", -Input.GetAxisRaw("Vertical"));
                 animator.SetFloat("BlendX", -Input.GetAxisRaw("Horizontal"));
             }
-
         }
-
     }
 
     void LookInMousePosition()
@@ -110,10 +102,10 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            PlayerAnimator.SetBool("isAttacking", true);
-            PlayerAnimator.speed = stats.AttackSpeed;
+            animator.SetBool("isAttacking", true);
+            animator.speed = stats.AttackSpeed;
             isAttacking = true;
-            PlayerAnimator.SetBool("isAttacking", isAttacking);
+            animator.SetBool("isAttacking", isAttacking);
             Collider[] enemys = Physics.OverlapSphere(axe.position, 0.1f, enemyLayer);
             if (!isHittingOnce)
             {
@@ -122,7 +114,7 @@ public class Player : MonoBehaviour
                 {
                     if (obj.GetComponent<IDamageable>() != null)
                     {
-                        obj.GetComponent<IDamageable>().TakeDmg(axeDmg);
+                        obj.GetComponent<IDamageable>().TakeDmg(stats.Dmg);
                     }
                 }
             }
@@ -131,7 +123,7 @@ public class Player : MonoBehaviour
         {
             isHittingOnce = false;
             isAttacking = false;
-            PlayerAnimator.SetBool("isAttacking", isAttacking);
+            animator.SetBool("isAttacking", isAttacking);
         }
     }
 
