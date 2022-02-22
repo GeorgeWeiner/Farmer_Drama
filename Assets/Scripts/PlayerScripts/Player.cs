@@ -108,8 +108,8 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            SoundManager.instance.PlayAudioClip(ESoundType.EnemyHit, GetComponent<AudioSource>());
-            animator.SetBool("isAttacking", true);
+            SoundManager.instance.PlayAudioClip(ESoundType.PlayerAttack, GetComponent<AudioSource>());
+            animator.SetTrigger("isAttacking");
             animator.speed = stats.AttackSpeed;
 
             Collider[] enemys = Physics.OverlapSphere(axe.position, 0.1f, enemyLayer);
@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
                 {
                     if (obj.GetComponent<IDamageable>() != null)
                     {
-                        SoundManager.instance.PlayAudioClip(ESoundType.PlayerAttack, GetComponent<AudioSource>());
+                        SoundManager.instance.PlayAudioClip(ESoundType.EnemyHit, GetComponent<AudioSource>());
                         obj.GetComponent<IDamageable>().TakeDmg(stats.Dmg);
                     }
                 }
