@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   attackCd: 3
   attackRange: 10
   explosionParticles: {fileID: 8716659444648367933, guid: cf18f3555f658544fae0d928eb14a6fc, type: 3}
