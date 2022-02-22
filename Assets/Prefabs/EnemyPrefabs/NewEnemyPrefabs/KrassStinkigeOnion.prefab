@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 5794329588159833660}
   - component: {fileID: 7345206248398181150}
   m_Layer: 7
-  m_Name: KrassStinkigeOnion
+  m_Name: OnionPrefab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5476,7 +5476,7 @@ GameObject:
   - component: {fileID: 7972481477108258834}
   - component: {fileID: 3646820556525702206}
   m_Layer: 7
-  m_Name: Onion
+  m_Name: KrassStinkigeOnion
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

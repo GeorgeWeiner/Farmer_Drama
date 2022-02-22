@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2181015357300928422}
   - component: {fileID: 2274747165165544981}
   m_Layer: 7
-  m_Name: Tomato
+  m_Name: "KrassT\xF6dlichTomate"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 7135143566253190394}
   - component: {fileID: 968521399595536841}
   m_Layer: 7
-  m_Name: "KrassT\xF6dlichTomate"
+  m_Name: Tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
