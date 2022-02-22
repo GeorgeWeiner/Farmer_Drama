@@ -8,6 +8,7 @@ public class HealthUp : Upgrade
     [SerializeField] float healthUpValue;
     public override void UpgradeFunction(GameObject player)
     {
+        SpawnManager.instance.UpgradSelected = true;
         player.GetComponent<Stats>().Health += healthUpValue;
     }
 }

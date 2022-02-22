@@ -5379,7 +5379,7 @@ GameObject:
   - component: {fileID: 331595018449136488}
   m_Layer: 7
   m_Name: Onion
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5435,6 +5435,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsOfThisObject: {fileID: 11400000, guid: 0c87b6364e1837d4b87b224ea535e741, type: 2}
   health: 20
+  attackSpeed: 0
+  speed: 0
+  dmg: 0
+  isOnCocain: 0
+  isOnBoosterVaccination: 0
 --- !u!114 &3160864750239158092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5447,9 +5452,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f810350df6caec742bed4b80e9e63df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLayer:
+  targetLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   attackCd: 2
   attackRange: 2.08
   gasParticles: {fileID: 6420211028678575870}
