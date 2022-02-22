@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c84be713-f4c8-4933-9bb9-2f6a5d0ae916" name="Changes" comment="" />
+    <list default="true" id="c84be713-f4c8-4933-9bb9-2f6a5d0ae916" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Farmer_Drama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Farmer_Drama/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Core/URP-Assets/Ultra-Quality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/URP-Assets/Ultra-Quality.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/George/Camera_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/George/Camera_Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645374515494</updated>
       <workItem from="1645374520858" duration="10340000" />
-      <workItem from="1645459743267" duration="13073000" />
+      <workItem from="1645459743267" duration="15082000" />
     </task>
     <servers />
   </component>

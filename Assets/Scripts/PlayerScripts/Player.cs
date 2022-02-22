@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     private Stats stats;
+<<<<<<< Updated upstream
 
     CharacterController characterController;
     Animator animator;
@@ -34,21 +33,44 @@ public class Player : MonoBehaviour
         leftCornerUp = new Vector3(transform.rotation.x, 315f, transform.rotation.z);
         rightCornerDown = new Vector3(transform.rotation.x, 135f, transform.rotation.z);
         leftCornerDown = new Vector3(transform.rotation.x, 225f, transform.rotation.z);
+=======
+    private Animator playerAnimator;
+    public Animator PlayerPlayerAnimator { get { return playerAnimator; } set { playerAnimator = value; } }
+    private CharacterController characterController;
+    private Vector3 velocity;
+    private bool isPlayerGrounded;
+    private bool isAttacking;
+    [SerializeField] private LayerMask enemyLayer;
+    [Header("PlayerWeapon")] 
+    [SerializeField] private Transform axe;
+    [SerializeField] private float axeDmg;
+    private bool isHittingOnce;
+
+
+    private void Start()
+    {
+        stats = GetComponent<Stats>();
+        characterController = GetComponent<CharacterController>();
+        playerAnimator = GetComponent<Animator>();
+>>>>>>> Stashed changes
     }
 
-    void Update()
+    private void Update()
     {
         
         PlayerMovement();
-
         LookInMousePosition();
-
         Attack();
     }
 
+<<<<<<< Updated upstream
     void PlayerMovement()
+=======
+
+    private void PlayerMovement()
+>>>>>>> Stashed changes
     {
-        Vector3 playerheight = new Vector3(transform.position.x, 0f, transform.position.z);
+        var playerheight = new Vector3(transform.position.x, 0f, transform.position.z);
         transform.position = playerheight;
 
         if (!isAttacking)
@@ -59,7 +81,7 @@ public class Player : MonoBehaviour
                 velocity.y = 0;
             }
 
-            Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+            var movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
             movement = Vector3.ClampMagnitude(movement, 1) * stats.Speed * Time.deltaTime;
 
@@ -69,6 +91,7 @@ public class Player : MonoBehaviour
                 SoundManager.instance.PlayAudioClip(ESoundType.PlayerWalking, GetComponent<AudioSource>());
             }
 
+<<<<<<< Updated upstream
             //Movement Animations
             if (transform.localEulerAngles.y <= rightCornerUp.y || transform.localEulerAngles.y >= leftCornerUp.y)
             {
@@ -90,24 +113,39 @@ public class Player : MonoBehaviour
                 animator.SetFloat("BlendY", -Input.GetAxisRaw("Vertical"));
                 animator.SetFloat("BlendX", -Input.GetAxisRaw("Horizontal"));
             }
+=======
+            playerAnimator.SetFloat("BlendY", Input.GetAxisRaw("Vertical"));
+            playerAnimator.SetFloat("BlendX", Input.GetAxisRaw("Horizontal"));
+>>>>>>> Stashed changes
         }
     }
 
-    void LookInMousePosition()
+    private void LookInMousePosition()
     {
+<<<<<<< Updated upstream
         mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(mouseRay, out RaycastHit hit))
         {
             Vector3 targetPosition = new Vector3(hit.point.x, 0f, hit.point.z);
             transform.LookAt(new Vector3(targetPosition.x, transform.position.y, targetPosition.z));
+=======
+        if (Camera.main == null) return;
+        var mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(mouseRay, out var hit))
+        {
+            var targetPosition = new Vector3(hit.point.x, 0f, hit.point.z);
+            transform.LookAt(targetPosition);
+>>>>>>> Stashed changes
             Debug.DrawLine(transform.position, targetPosition, Color.green);
         }
     }
 
-    void Attack()
+    private void Attack()
     {
         if (Input.GetMouseButtonDown(0))
         {
+<<<<<<< Updated upstream
             SoundManager.instance.PlayRandomAttackSound();
             animator.SetTrigger("isAttacking");
             animator.speed = stats.AttackSpeed;
@@ -116,6 +154,17 @@ public class Player : MonoBehaviour
             if (!isHittingOnce)
             {
                 foreach (var obj in enemys)
+=======
+            PlayerPlayerAnimator.SetBool("isAttacking", true);
+            PlayerPlayerAnimator.speed = stats.AttackSpeed;
+            isAttacking = true;
+            PlayerPlayerAnimator.SetBool("isAttacking", isAttacking);
+            var enemies = Physics.OverlapSphere(axe.position, 0.1f, enemyLayer);
+            if (!isHittingOnce)
+            {
+                isHittingOnce = true;
+                foreach (var obj in enemies)
+>>>>>>> Stashed changes
                 {
                     if (obj.GetComponent<IDamageable>() != null)
                     {
@@ -125,6 +174,15 @@ public class Player : MonoBehaviour
                 }
             }
         }
+<<<<<<< Updated upstream
+=======
+        else
+        {
+            isHittingOnce = false;
+            isAttacking = false;
+            PlayerPlayerAnimator.SetBool("isAttacking", isAttacking);
+        }
+>>>>>>> Stashed changes
     }
 
 }
