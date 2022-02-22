@@ -22,6 +22,7 @@ public enum ESoundType
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] List<SoundFile> soundEffects;
+    [SerializeField] List<SoundFile> playerAttackSounds;
 
     public static SoundManager instance;
 
@@ -50,6 +51,12 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
+    public void PlayRandomAttackSound(AudioSource audioSource)
+    {
+        int randomSound = Random.Range(0, playerAttackSounds.Count);
+        audioSource.volume = playerAttackSounds[randomSound].Volume;
+        audioSource.PlayOneShot(playerAttackSounds[randomSound].AudioClip);
+    }
 
     bool ISSoundPlayable(SoundFile sound, float offset)
     {
@@ -67,7 +74,6 @@ public class SoundManager : MonoBehaviour
             return false;
         }
     }
-
     void SetTimer(SoundFile sound)
     {
         sound.SoundTimer = Time.time + sound.AudioClip.length;
