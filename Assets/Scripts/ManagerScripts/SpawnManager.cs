@@ -51,7 +51,7 @@ public class SpawnManager : MonoBehaviour
     private IEnumerator SpawnEnemies()
     {
         OnWaveBegin?.Invoke();
-        SoundManager.instance.PlayAudioClip(ESoundType.OnWaveBegin, GetComponent<AudioSource>());
+        SoundManager.instance.PlayAudioClip(ESoundType.OnWaveBegin, GetComponent<AudioSource>(),false);
         yield return new WaitForSeconds(3);
         float delayBetweenEnemySpawn = 0.5f;
         for (int i = 0; i < amountOfEnemiesToSpawn ; i++)

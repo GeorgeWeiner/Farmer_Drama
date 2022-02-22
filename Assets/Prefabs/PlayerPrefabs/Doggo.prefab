@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5291737767092353667}
   m_Layer: 3
   m_Name: Doggo
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,7 +187,7 @@ PrefabInstance:
     - target: {fileID: -7918335002988649766, guid: f42f28763fe30fd4ca118d83b4eebe6c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 5561349426305759274, guid: 1a0bcd4da72626e44b1f578fac0c8e20, type: 3}
+      objectReference: {fileID: 2100000, guid: c7f213232cc49134aa4b37976e43d181, type: 2}
     - target: {fileID: -6374234432173915237, guid: f42f28763fe30fd4ca118d83b4eebe6c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -227,11 +227,11 @@ PrefabInstance:
     - target: {fileID: 6317578925029434746, guid: f42f28763fe30fd4ca118d83b4eebe6c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b61d3108cb6be6f4fbd3591146bf0df6, type: 2}
+      objectReference: {fileID: 2100000, guid: d3b1e3ad5b306cc4caf41b74e7c3f733, type: 2}
     - target: {fileID: 6829333093618665122, guid: f42f28763fe30fd4ca118d83b4eebe6c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b61d3108cb6be6f4fbd3591146bf0df6, type: 2}
+      objectReference: {fileID: 2100000, guid: 0db3ab60a4214994692bf7577e9780ef, type: 2}
     - target: {fileID: 7790843065575244577, guid: f42f28763fe30fd4ca118d83b4eebe6c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -243,7 +243,7 @@ PrefabInstance:
     - target: {fileID: 8521902485874960664, guid: f42f28763fe30fd4ca118d83b4eebe6c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 5561349426305759274, guid: 1a0bcd4da72626e44b1f578fac0c8e20, type: 3}
+      objectReference: {fileID: 2100000, guid: c7f213232cc49134aa4b37976e43d181, type: 2}
     - target: {fileID: 8730303016566787287, guid: f42f28763fe30fd4ca118d83b4eebe6c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

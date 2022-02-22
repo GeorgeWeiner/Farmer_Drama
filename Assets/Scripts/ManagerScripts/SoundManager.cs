@@ -15,7 +15,9 @@ public enum ESoundType
     Upgrade,
     CocainIsGoingCrazy,
     OnWaveBegin,
-    PlayerWalking
+    PlayerWalking,
+    TomatoSound,
+    TomatoExplosion
 }
 
 
@@ -39,17 +41,32 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void PlayAudioClip(ESoundType soundType, AudioSource audioSource)
+    public void PlayAudioClip(ESoundType soundType, AudioSource audioSource,bool isBonusSound)
     {
-        for(int i = 0; i < soundEffects.Count; i++)
+        if (!isBonusSound)
         {
-            if(soundEffects[i].SoundType == soundType && ISSoundPlayable(soundEffects[i], soundEffects[i].Offset))
+            for (int i = 0; i < soundEffects.Count; i++)
             {
-                audioSource.volume = soundEffects[i].Volume;
-                audioSource.PlayOneShot(soundEffects[i].AudioClip);
-                return;
+                if (soundEffects[i].SoundType == soundType && ISSoundPlayable(soundEffects[i], soundEffects[i].Offset))
+                {
+                    audioSource.volume = soundEffects[i].Volume;
+                    audioSource.PlayOneShot(soundEffects[i].AudioClip);
+                    return;
+                }
             }
         }
+        else
+        {
+            for (int i = 0; i < soundEffects.Count; i++)
+            {
+                if (soundEffects[i].SoundType == soundType && ISSoundPlayable(soundEffects[i], soundEffects[i].Offset))
+                {
+                    CreateAudioObject(soundEffects[i]);
+                    return;
+                }
+            }      
+        }
+       
     }
     public void PlayRandomAttackSound()
     {
@@ -57,7 +74,6 @@ public class SoundManager : MonoBehaviour
         CreateAudioObject(playerAttackSounds[randomSound]);
        
     }
-
     bool ISSoundPlayable(SoundFile sound, float offset)
     {
         if(sound.SoundTimer - offset <= Time.time)
@@ -87,7 +103,6 @@ public class SoundManager : MonoBehaviour
         Destroy(tempObj, fileToPlay.AudioClip.length);
     }
 }
-
 [System.Serializable]
 public class SoundFile
 {
