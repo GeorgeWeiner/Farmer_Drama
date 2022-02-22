@@ -51,11 +51,11 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
-    public void PlayRandomAttackSound(AudioSource audioSource)
+    public void PlayRandomAttackSound()
     {
         int randomSound = Random.Range(0, playerAttackSounds.Count);
-        audioSource.volume = playerAttackSounds[randomSound].Volume;
-        audioSource.PlayOneShot(playerAttackSounds[randomSound].AudioClip);
+        CreateAudioObject(playerAttackSounds[randomSound]);
+       
     }
 
     bool ISSoundPlayable(SoundFile sound, float offset)
@@ -77,6 +77,14 @@ public class SoundManager : MonoBehaviour
     void SetTimer(SoundFile sound)
     {
         sound.SoundTimer = Time.time + sound.AudioClip.length;
+    }
+    void CreateAudioObject(SoundFile fileToPlay)
+    {
+        var tempObj = new GameObject();
+        var tempAudioSource = tempObj.AddComponent<AudioSource>();
+        tempAudioSource.volume = fileToPlay.Volume;
+        tempAudioSource.PlayOneShot(fileToPlay.AudioClip);
+        Destroy(tempObj, fileToPlay.AudioClip.length);
     }
 }
 

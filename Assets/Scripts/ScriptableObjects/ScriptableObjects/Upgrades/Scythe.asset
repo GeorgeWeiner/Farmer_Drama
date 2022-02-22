@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cb718f2aac050128507bf13ed3ff88, type: 3}
   m_Name: Scythe
   m_EditorClassIdentifier: 
-  upgradeImg: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  description: 
+  upgradeImg: {fileID: 21300000, guid: 614aee87943f7b24ca013cea531523b4, type: 3}
+  description: asasdasd
   scythe: {fileID: 1983903536892367032, guid: feaef0ff0087b964d82a85d6ed0af18e, type: 3}

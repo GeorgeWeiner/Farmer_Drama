@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02148cab336716e42865a11b6df40965, type: 3}
   m_Name: Doggo
   m_EditorClassIdentifier: 
-  upgradeImg: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  description: 
+  upgradeImg: {fileID: 21300000, guid: dfbba743b546c604fa231817e6eb734a, type: 3}
+  description: asdadsadafgggg
   companion: {fileID: 5291737767092353678, guid: 9e7fe699a15ee404ea291ea48e8b6c7d, type: 3}
