@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     private Stats stats;
 
     CharacterController characterController;
-    Animator animator;
+    Animator animatoer;
     Ray mouseRay;
     Vector3 velocity;
     bool isPlayerGrounded;
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     {
         stats = GetComponent<Stats>();
         characterController = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
+        animatoer = GetComponent<Animator>();
         rightCornerUp = new Vector3(transform.rotation.x, 45f, transform.rotation.z);
         leftCornerUp = new Vector3(transform.rotation.x, 315f, transform.rotation.z);
         rightCornerDown = new Vector3(transform.rotation.x, 135f, transform.rotation.z);
@@ -72,23 +72,23 @@ public class Player : MonoBehaviour
             //Movement Animations
             if (transform.localEulerAngles.y <= rightCornerUp.y || transform.localEulerAngles.y >= leftCornerUp.y)
             {
-                animator.SetFloat("BlendY", Input.GetAxisRaw("Vertical"));
-                animator.SetFloat("BlendX", Input.GetAxisRaw("Horizontal"));
+                animatoer.SetFloat("BlendY", Input.GetAxisRaw("Vertical"));
+                animatoer.SetFloat("BlendX", Input.GetAxisRaw("Horizontal"));
             }
             if(transform.localEulerAngles.y >= rightCornerUp.y && transform.localEulerAngles.y <= rightCornerDown.y)
             {
-                animator.SetFloat("BlendX", -Input.GetAxisRaw("Vertical"));
-                animator.SetFloat("BlendY", Input.GetAxisRaw("Horizontal"));
+                animatoer.SetFloat("BlendX", -Input.GetAxisRaw("Vertical"));
+                animatoer.SetFloat("BlendY", Input.GetAxisRaw("Horizontal"));
             }
             if (transform.localEulerAngles.y >= leftCornerDown.y && transform.localEulerAngles.y <= leftCornerUp.y)
             {
-                animator.SetFloat("BlendX", Input.GetAxisRaw("Vertical"));
-                animator.SetFloat("BlendY", -Input.GetAxisRaw("Horizontal"));
+                animatoer.SetFloat("BlendX", Input.GetAxisRaw("Vertical"));
+                animatoer.SetFloat("BlendY", -Input.GetAxisRaw("Horizontal"));
             }
             if(transform.localEulerAngles.y >= rightCornerDown.y && transform.localEulerAngles.y <= leftCornerDown.y)
             {
-                animator.SetFloat("BlendY", -Input.GetAxisRaw("Vertical"));
-                animator.SetFloat("BlendX", -Input.GetAxisRaw("Horizontal"));
+                animatoer.SetFloat("BlendY", -Input.GetAxisRaw("Vertical"));
+                animatoer.SetFloat("BlendX", -Input.GetAxisRaw("Horizontal"));
             }
         }
     }
@@ -109,8 +109,8 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             SoundManager.instance.PlayRandomAttackSound();
-            animator.SetTrigger("isAttacking");
-            animator.speed = stats.AttackSpeed;
+            animatoer.SetTrigger("isAttacking");
+            animatoer.speed = stats.AttackSpeed;
 
             Collider[] enemys = Physics.OverlapSphere(axe.position, 0.1f, enemyLayer);
             if (!isHittingOnce)
