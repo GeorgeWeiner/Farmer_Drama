@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     Animator animator;
     public Animator PlayerAnimator { get { return animator; } set { animator = value; } }
-
+    Ray mouseRay;
     CharacterController characterController;
     Vector3 velocity;
     bool isPlayerGrounded;
@@ -19,12 +19,21 @@ public class Player : MonoBehaviour
     [SerializeField] float axeDmg;
     bool isHittingOnce;
 
+    //Playerdirections
+    Vector3 rightCornerUp;
+    Vector3 leftCornerUp;
+    Vector3 rightCornerDown;
+    Vector3 leftCornerDown;
 
     void Start()
     {
         stats = GetComponent<Stats>();
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        rightCornerUp = new Vector3(transform.rotation.x, 45f, transform.rotation.z);
+        leftCornerUp = new Vector3(transform.rotation.x, -45f, transform.rotation.z);
+        rightCornerDown = new Vector3(transform.rotation.x, 135f, transform.rotation.z);
+        leftCornerDown = new Vector3(transform.rotation.x, -135f, transform.rotation.z);
     }
 
     void Update()
@@ -57,20 +66,42 @@ public class Player : MonoBehaviour
 
             characterController.Move(movement);
 
-            animator.SetFloat("BlendY", Input.GetAxisRaw("Vertical"));
-            animator.SetFloat("BlendX", Input.GetAxisRaw("Horizontal"));
+            if (transform.localEulerAngles.y <= rightCornerUp.y && transform.localEulerAngles.y >= leftCornerUp.y)
+            {
+                Debug.Log("LinksOben, rechtsOben");
+                animator.SetFloat("BlendY", Input.GetAxisRaw("Vertical"));
+                animator.SetFloat("BlendX", Input.GetAxisRaw("Horizontal"));
+            }
+            else if(transform.localEulerAngles.y >= rightCornerUp.y && transform.localEulerAngles.y <= rightCornerDown.y)
+            {
+                Debug.Log("rechtsOben, rechtsUnten");
+                animator.SetFloat("BlendX", -Input.GetAxisRaw("Vertical"));
+                animator.SetFloat("BlendY", Input.GetAxisRaw("Horizontal"));
+            }
+            else if (transform.localEulerAngles.y >= leftCornerDown.y && transform.localEulerAngles.y >= leftCornerUp.y)
+            {
+                Debug.Log("linksUnten, linksOben");
+                animator.SetFloat("BlendX", Input.GetAxisRaw("Vertical"));
+                animator.SetFloat("BlendY", -Input.GetAxisRaw("Horizontal"));
+            }
+            else if(transform.localEulerAngles.y >= rightCornerDown.y && transform.localEulerAngles.y >= leftCornerDown.y)
+            {
+                Debug.Log("rechtsUnten, linksUnten");
+                animator.SetFloat("BlendY", -Input.GetAxisRaw("Vertical"));
+                animator.SetFloat("BlendX", -Input.GetAxisRaw("Horizontal"));
+            }
+
         }
 
     }
 
     void LookInMousePosition()
     {
-        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+        mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(mouseRay, out RaycastHit hit))
         {
             Vector3 targetPosition = new Vector3(hit.point.x, 0f, hit.point.z);
-            transform.LookAt(new Vector3(targetPosition.x,transform.position.y,targetPosition.z));
+            transform.LookAt(new Vector3(targetPosition.x, transform.position.y, targetPosition.z));
             Debug.DrawLine(transform.position, targetPosition, Color.green);
         }
     }
