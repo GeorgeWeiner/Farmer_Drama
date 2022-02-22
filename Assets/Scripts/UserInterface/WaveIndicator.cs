@@ -4,21 +4,16 @@ using UserInterface;
 
 public class WaveIndicator : MonoBehaviour, IUserInterfaceElement
 {
-    //Not sure this works, I didn't test this yet.
-    
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private Animation _animation;
     
     private int _waveCount; 
     private SpawnManager _spawnManager;
-    private Animator _animator;
-    private static readonly int OnWaveBegin = Animator.StringToHash("Base Layer.WaveBeginAnimation");
 
     private void Awake()
     {
         _spawnManager = FindObjectOfType<SpawnManager>();
-        _animator = GetComponent<Animator>();
-       
         InitializeUIElement();
     }
 
@@ -30,7 +25,6 @@ public class WaveIndicator : MonoBehaviour, IUserInterfaceElement
 
     public void UpdateUIElement()
     {
-        //text.color = new Color(text.color.r, text.color.g, text.color.b, 255f);
         _waveCount++;
         text.text = "Wave " + _waveCount;
         
@@ -39,7 +33,7 @@ public class WaveIndicator : MonoBehaviour, IUserInterfaceElement
 
     private void OnWaveBeginAnimation()
     {
-        _animator.Play(OnWaveBegin);
+        _animation.Play();
         
         SoundManager.instance.PlayAudioClip(ESoundType.OnWaveBegin, _audioSource,false);
     }
