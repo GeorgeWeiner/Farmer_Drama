@@ -14,7 +14,8 @@ public enum ESoundType
     HealthUp,
     Upgrade,
     CocainIsGoingCrazy,
-    OnWaveBegin
+    OnWaveBegin,
+    PlayerWalking
 }
 
 
