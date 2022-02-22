@@ -5473,7 +5473,7 @@ GameObject:
   - component: {fileID: 3160864750239158092}
   - component: {fileID: 8178277797178956050}
   - component: {fileID: 9144132257484075695}
-  - component: {fileID: 331595018449136488}
+  - component: {fileID: 7972481477108258834}
   m_Layer: 7
   m_Name: Onion
   m_TagString: Enemy
@@ -5567,8 +5567,8 @@ NavMeshAgent:
   m_BaseOffset: 0.01
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!135 &331595018449136488
-SphereCollider:
+--- !u!136 &7972481477108258834
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5577,6 +5577,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.2
-  m_Center: {x: 0, y: 1.07, z: 0}
+  m_Radius: 1.37
+  m_Height: 4.19
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.3, z: 0}

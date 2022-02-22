@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            SoundManager.instance.PlayRandomAttackSound( GetComponent<AudioSource>());
+            SoundManager.instance.PlayRandomAttackSound(GetComponent<AudioSource>());
             animator.SetTrigger("isAttacking");
             animator.speed = stats.AttackSpeed;
 
