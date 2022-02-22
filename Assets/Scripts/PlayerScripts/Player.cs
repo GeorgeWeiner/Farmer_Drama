@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     Vector3 velocity;
     bool isPlayerGrounded;
     bool isAttacking;
+    public bool IsAttacking { set { isAttacking = value; } }
     [SerializeField] LayerMask enemyLayer;
 
     //PlayerWeapon
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        
         PlayerMovement();
 
         LookInMousePosition();
@@ -100,16 +102,14 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            animator.SetBool("isAttacking", true);
+            animator.SetTrigger("isAttacking");
             animator.speed = stats.AttackSpeed;
-            isAttacking = true;
-            animator.SetBool("isAttacking", isAttacking);
+
             Collider[] enemys = Physics.OverlapSphere(axe.position, 0.1f, enemyLayer);
             if (!isHittingOnce)
             {
-                isHittingOnce = true;
                 foreach (var obj in enemys)
                 {
                     if (obj.GetComponent<IDamageable>() != null)
@@ -118,12 +118,6 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-        }
-        else
-        {
-            isHittingOnce = false;
-            isAttacking = false;
-            animator.SetBool("isAttacking", isAttacking);
         }
     }
 
