@@ -710,7 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   attackCd: 2
   attackRange: 4
   pumpkinSeedProjectile: {fileID: 7296552629838866107, guid: 18ee512099e02944b811684e97928876, type: 3}
