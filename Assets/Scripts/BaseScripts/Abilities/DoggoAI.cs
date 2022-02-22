@@ -20,13 +20,13 @@ public class DoggoAI : EnemyAI
     protected override void AttackTarget()
     {
         if (canAttack)
-        { 
+        {
             int counter = 0;
             StartCoroutine(AttackCd());
-            Collider[] attackableTargets = Physics.OverlapSphere(transform.position + Vector3.forward,attackRange,targetLayer);
+            Collider[] attackableTargets = Physics.OverlapSphere(transform.position + Vector3.forward, attackRange, targetLayer);
             for (int i = 0; i < attackableTargets.Length; i++)
             {
-                if(counter <= amountOfTargetsThatCanBeHit)
+                if (counter <= amountOfTargetsThatCanBeHit)
                 {
                     attackableTargets[i].GetComponent<IDamageable>().TakeDmg(GetComponent<Stats>().Dmg);
                 }
@@ -35,22 +35,25 @@ public class DoggoAI : EnemyAI
     }
     protected override void ChaseTarget()
     {
-        if (CheckIfEnemiesAreInSight() && currentState == AIStates.chasing)
+        if (target != null)
         {
-            agent.isStopped = false;
-            target = GameObject.FindGameObjectWithTag("Enemy").transform;
-            agent.SetDestination(target.position);
-        }
-        else if(CalculateDistanceToPlayer() >= 4f)
-        {
-            agent.isStopped = false;
-            target = player.transform;
-            agent.SetDestination(target.position);
-            
-        }
-        else
-        {
-            agent.isStopped = true;
+            if (CheckIfEnemiesAreInSight() && currentState == AIStates.chasing)
+            {
+                agent.isStopped = false;
+                target = GameObject.FindGameObjectWithTag("Enemy").transform;
+                agent.SetDestination(target.position);
+            }
+            else if (CalculateDistanceToPlayer() >= 4f)
+            {
+                agent.isStopped = false;
+                target = player.transform;
+                agent.SetDestination(target.position);
+
+            }
+            else
+            {
+                agent.isStopped = true;
+            }
         }
     }
     bool CheckIfEnemiesAreInSight()

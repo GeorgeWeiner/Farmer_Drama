@@ -10,7 +10,7 @@ public class Scythe : MonoBehaviour
     [SerializeField] float maxDistance;
     [SerializeField] Transform player;
     [SerializeField] Transform rotationPoint;
-    public Transform RotationPoint { get { return rotationPoint; }set { rotationPoint = value; } }
+    public Transform RotationPoint { get { return rotationPoint; } set { rotationPoint = value; } }
     public Transform Player { get { return player; } set { player = value; } }
     private void Update()
     {
@@ -20,19 +20,22 @@ public class Scythe : MonoBehaviour
     }
     void RotateAroundPlayer()
     {
-        rotationPoint.position = player.position;
-        if(Time.timeScale == 1)
+        if (player != null)
         {
-            transform.RotateAround(rotationPoint.position , rotationPoint.up, rotationSpeed * Time.deltaTime);
-        }   
+            rotationPoint.position = player.position;
+            if (Time.timeScale == 1)
+            {
+                transform.RotateAround(rotationPoint.position, rotationPoint.up, rotationSpeed * Time.deltaTime);
+            }
+        }
     }
     void MoveTowardsPlayer()
     {
-        if(Mathf.Sqrt((player.transform.position - transform.position).sqrMagnitude) >= maxDistance)
+        if (Mathf.Sqrt((player.transform.position - transform.position).sqrMagnitude) >= maxDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * 5);
         }
-        
+
     }
     void Rotate()
     {
@@ -40,7 +43,7 @@ public class Scythe : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<IDamageable>() != null)
+        if (other.GetComponent<IDamageable>() != null)
         {
             other.GetComponent<IDamageable>().TakeDmg(dmg);
         }
