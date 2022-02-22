@@ -12,7 +12,7 @@ public class WaveIndicator : MonoBehaviour, IUserInterfaceElement
     private int _waveCount; 
     private SpawnManager _spawnManager;
     private Animator _animator;
-    private static readonly int OnWaveBegin = Animator.StringToHash("OnWaveBegin");
+    private static readonly int OnWaveBegin = Animator.StringToHash("Base Layer.WaveBeginAnimation");
 
     private void Awake()
     {
@@ -30,15 +30,16 @@ public class WaveIndicator : MonoBehaviour, IUserInterfaceElement
 
     public void UpdateUIElement()
     {
+        //text.color = new Color(text.color.r, text.color.g, text.color.b, 255f);
         _waveCount++;
-        text.text = "Wave" + _waveCount;
+        text.text = "Wave " + _waveCount;
         
         OnWaveBeginAnimation();
     }
 
     private void OnWaveBeginAnimation()
     {
-        _animator.SetTrigger(OnWaveBegin);
+        _animator.Play(OnWaveBegin);
         
         SoundManager.instance.PlayAudioClip(ESoundType.OnWaveBegin, _audioSource,false);
     }

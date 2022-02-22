@@ -7,7 +7,7 @@ public class ChangeSliderValue : MonoBehaviour, IUserInterfaceElement
     [SerializeField] private Slider slider;
     [SerializeField] private Stats stats;
 
-    private void Awake()
+    private void Start()
     {
         InitializeUIElement();
     }

@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c84be713-f4c8-4933-9bb9-2f6a5d0ae916" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Farmer_Drama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Farmer_Drama/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/URP-Assets/Ultra-Quality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/URP-Assets/Ultra-Quality.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/George/Camera_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/George/Camera_Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UserInterfaceAnimations/UI-Animations.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UserInterfaceAnimations/UI-Animations.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enzo/EnzoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enzo/EnzoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/George/UserInterfaceInGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/George/UserInterfaceInGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ManagerScripts/SpawnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ManagerScripts/SpawnManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/ChangeSliderValue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/ChangeSliderValue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/WaveIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/WaveIndicator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +76,8 @@
       <updated>1645374515494</updated>
       <workItem from="1645374520858" duration="10340000" />
       <workItem from="1645459743267" duration="15082000" />
+      <workItem from="1645559042849" duration="68000" />
+      <workItem from="1645559318861" duration="3509000" />
     </task>
     <servers />
   </component>
