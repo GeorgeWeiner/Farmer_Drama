@@ -25,6 +25,8 @@ public class TomatoAI : EnemyAI
     }
     IEnumerator Explode()
     {
+
+        SoundManager.instance.PlayAudioClip(ESoundType.TomatoSound, GetComponent<AudioSource>(),false);
         float explosionTimer = 0;
         Vector3 tomatoSizeToReach = transform.localScale + Vector3.one / 2;
         while (attackCd >= 0)
@@ -35,6 +37,7 @@ public class TomatoAI : EnemyAI
             GetComponentInChildren<Renderer>().material.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time * explosionBlinkSpeed,1));
             yield return new WaitForEndOfFrame();
         }
+       
         DealExplosionDmg();   
     }
     void DealExplosionDmg()
@@ -49,6 +52,7 @@ public class TomatoAI : EnemyAI
         }
         var tempParticles = Instantiate(explosionParticles, transform.position, transform.rotation);
         GetComponent<IOnDie>().OnDie();
+        SoundManager.instance.PlayAudioClip(ESoundType.TomatoExplosion, GetComponent<AudioSource>(),true);
         Destroy(gameObject);
     }
 }

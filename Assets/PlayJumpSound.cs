@@ -19,7 +19,7 @@ public class PlayJumpSound : StateMachineBehaviour
         if(timer >= lastTimePlayed)
         {
             lastTimePlayed = Time.time + 1;
-            SoundManager.instance.PlayAudioClip(ESoundType.Enemy, animator.GetComponent<AudioSource>());
+            SoundManager.instance.PlayAudioClip(ESoundType.Enemy, animator.GetComponent<AudioSource>(),false);
         }
     }
 

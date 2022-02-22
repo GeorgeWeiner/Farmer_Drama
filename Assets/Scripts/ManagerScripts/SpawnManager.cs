@@ -19,6 +19,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI [] upgradeText;
     [SerializeField] float amountOfEnemiesToSpawn;
     [SerializeField] float delayBeetweenWaves;
+    [SerializeField] float timeTillUpgradeUIActivates;
     static public SpawnManager instance;
 
     public event Action OnWaveBegin;
@@ -51,7 +52,7 @@ public class SpawnManager : MonoBehaviour
     private IEnumerator SpawnEnemies()
     {
         OnWaveBegin?.Invoke();
-        SoundManager.instance.PlayAudioClip(ESoundType.OnWaveBegin, GetComponent<AudioSource>());
+        SoundManager.instance.PlayAudioClip(ESoundType.OnWaveBegin, GetComponent<AudioSource>(),false);
         yield return new WaitForSeconds(3);
         float delayBetweenEnemySpawn = 0.5f;
         for (int i = 0; i < amountOfEnemiesToSpawn ; i++)
@@ -64,6 +65,7 @@ public class SpawnManager : MonoBehaviour
         }
         yield return new WaitUntil(CheckIfAllEnemiesAreDead);
         amountOfEnemiesToSpawn += 4;
+        yield return new WaitForSeconds(timeTillUpgradeUIActivates);
         ActivateUpgradeUI();
         GetRandomUpgrade();
         yield return new WaitUntil(DeactivateUpgradeUI);
@@ -116,6 +118,7 @@ public class SpawnManager : MonoBehaviour
     void ActivateUpgradeUI()
     {
         upgradeUI.gameObject.SetActive(true);
+        player.GetComponent<Player>().enabled = false;
         Time.timeScale = 0;
     }
     public bool DeactivateUpgradeUI()
@@ -126,6 +129,7 @@ public class SpawnManager : MonoBehaviour
             Time.timeScale = 1;
             upgradeUI.gameObject.SetActive(false);
             upgradeSelected = false;
+            player.GetComponent<Player>().enabled = true;
             return true;
         }
         else

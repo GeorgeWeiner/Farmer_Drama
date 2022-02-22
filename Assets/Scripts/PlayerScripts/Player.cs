@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
             characterController.Move(movement);
             if(movement.magnitude >= 0)
             {
-                SoundManager.instance.PlayAudioClip(ESoundType.PlayerWalking, GetComponent<AudioSource>());
+                SoundManager.instance.PlayAudioClip(ESoundType.PlayerWalking, GetComponent<AudioSource>(),false);
             }
 
 <<<<<<< Updated upstream
@@ -168,7 +168,7 @@ public class Player : MonoBehaviour
                 {
                     if (obj.GetComponent<IDamageable>() != null)
                     {
-                        SoundManager.instance.PlayAudioClip(ESoundType.EnemyHit, GetComponent<AudioSource>());
+                        SoundManager.instance.PlayAudioClip(ESoundType.EnemyHit, GetComponent<AudioSource>(),false);
                         obj.GetComponent<IDamageable>().TakeDmg(stats.Dmg);
                     }
                 }

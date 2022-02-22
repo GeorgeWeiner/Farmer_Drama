@@ -40,6 +40,6 @@ public class WaveIndicator : MonoBehaviour, IUserInterfaceElement
     {
         _animator.SetTrigger(OnWaveBegin);
         
-        SoundManager.instance.PlayAudioClip(ESoundType.OnWaveBegin, _audioSource);
+        SoundManager.instance.PlayAudioClip(ESoundType.OnWaveBegin, _audioSource,false);
     }
 }
