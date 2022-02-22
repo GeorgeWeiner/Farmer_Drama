@@ -7545,7 +7545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2243525822331455356, guid: e82311638370cce47835043797dd99f1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2243525822331455356, guid: e82311638370cce47835043797dd99f1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16241,6 +16241,7 @@ MonoBehaviour:
   - {fileID: 1558762085}
   amountOfEnemiesToSpawn: 5
   delayBeetweenWaves: 5
+  timeTillUpgradeUIActivates: 0
 --- !u!82 &1482709322
 AudioSource:
   m_ObjectHideFlags: 0
