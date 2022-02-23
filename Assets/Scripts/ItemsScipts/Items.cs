@@ -4,6 +4,11 @@ using UnityEngine;
 
 public abstract class Items : MonoBehaviour
 {
+    [SerializeField] float rotationSpeed;
+    protected void Update()
+    {
+        RotateItem();
+    }
     /// <summary>
     /// Checks if the object collides with something
     /// </summary>
@@ -32,5 +37,9 @@ public abstract class Items : MonoBehaviour
         gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
         gameObject.GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(_timer);
+    }
+    void RotateItem()
+    {
+        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
 }

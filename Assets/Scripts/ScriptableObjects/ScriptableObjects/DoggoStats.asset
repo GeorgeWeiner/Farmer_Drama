@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DoggoStats
   m_EditorClassIdentifier: 
   name: doggo
-  health: 2000
+  health: 200
   attackDamage: 20
   attackSpeed: 2
   movementSpeed: 6

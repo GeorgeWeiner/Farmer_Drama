@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8275288833129916075}
   m_Layer: 0
   m_Name: Scythe
-  m_TagString: Untagged
+  m_TagString: Scythe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
-  scytheRotationSpeed: 200
+  scytheRotationSpeed: 400
   dmg: 5
   maxDistance: 4
   player: {fileID: 0}

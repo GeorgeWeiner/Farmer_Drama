@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PumpkinEnemy
   m_EditorClassIdentifier: 
   name: Pumpkin
-  health: 20
+  health: 40
   attackDamage: 5
   attackSpeed: 2
   movementSpeed: 5

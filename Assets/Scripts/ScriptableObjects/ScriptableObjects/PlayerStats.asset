@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   name: Player
-  health: 20000
+  health: 300
   attackDamage: 20
   attackSpeed: 1.5
   movementSpeed: 6

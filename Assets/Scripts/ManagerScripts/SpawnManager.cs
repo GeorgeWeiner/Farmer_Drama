@@ -14,12 +14,16 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] List<GameObject> allEnemies;
     [SerializeField] List<GameObject> currentlyAliveEnemies;
     [SerializeField] List<GameObject> allSpawnPoints;
-    [SerializeField] List<Upgrade> upgradeList;
     [SerializeField] List<GameObject> upgradeButtons;
+    [SerializeField] List<GameObject> scytheSpawnPoints;
+    public Transform SpawnPoints { get { return scytheSpawnPoints[scytheCount].transform; } }
+    [SerializeField] List<Upgrade> upgradeList;
     [SerializeField] TextMeshProUGUI [] upgradeText;
     [SerializeField] float amountOfEnemiesToSpawn;
     [SerializeField] float delayBeetweenWaves;
     [SerializeField] float timeTillUpgradeUIActivates;
+    [SerializeField] int scytheCount;
+    public int ScytheCount { get { return scytheCount; } set { scytheCount = value; } }
     static public SpawnManager instance;
 
     public event Action OnWaveBegin;
@@ -52,7 +56,6 @@ public class SpawnManager : MonoBehaviour
     private IEnumerator SpawnEnemies()
     {
         OnWaveBegin?.Invoke();
-        //SoundManager.instance.PlayAudioClip(ESoundType.OnWaveBegin, GetComponent<AudioSource>(),false);
         yield return new WaitForSeconds(3);
         float delayBetweenEnemySpawn = 0.5f;
         for (int i = 0; i < amountOfEnemiesToSpawn ; i++)
@@ -136,10 +139,6 @@ public class SpawnManager : MonoBehaviour
         {
             return false;
         }
-    }
-    public void ShowUpgradeText(Upgrade upgradeText)
-    {
-
     }
     protected void AddEvent(EventTriggerType type, UnityAction<BaseEventData> action, GameObject button)
     {
