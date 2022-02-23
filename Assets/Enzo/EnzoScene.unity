@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18029153, g: 0.2257241, b: 0.30693024, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3779,6 +3779,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4073848816190784, guid: d7fd0f034fb608643a24ead27702c3a3, type: 3}
   m_PrefabInstance: {fileID: 1884544296}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &342055649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5723557742921423929, guid: 9a1469cae1ae22e39a862e848c52e475, type: 3}
+  m_PrefabInstance: {fileID: 451240031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &343766836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4558,6 +4563,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1504791433}
+    - target: {fileID: 5307554400288154521, guid: 9a1469cae1ae22e39a862e848c52e475, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5307554400288154522, guid: 9a1469cae1ae22e39a862e848c52e475, type: 3}
       propertyPath: m_Name
       value: UI-Canvas
@@ -10374,6 +10383,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4445123275070158, guid: 7ea6c767c13a093489de65e27dfd7aca, type: 3}
   m_PrefabInstance: {fileID: 1117284285}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1133067726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9197178365677978522, guid: 9a1469cae1ae22e39a862e848c52e475, type: 3}
+  m_PrefabInstance: {fileID: 451240031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1135405242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4073848816190784, guid: d7fd0f034fb608643a24ead27702c3a3, type: 3}
@@ -13423,7 +13437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953f754f944d7dd498586ad2a5071928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeUI: {fileID: 493163945}
+  upgradeUI: {fileID: 1645804749}
   player: {fileID: 1306768382}
   allEnemies:
   - {fileID: 7082912909190315598, guid: 1396a6ade2cd8194a8be7fc586c57932, type: 3}
@@ -13435,20 +13449,22 @@ MonoBehaviour:
   - {fileID: 1408769391}
   - {fileID: 1667727631}
   - {fileID: 1958707591}
+  upgradeButtons:
+  - {fileID: 342055649}
+  - {fileID: 1133067726}
+  scytheSpawnPoints: []
   upgradeList:
   - {fileID: 11400000, guid: b09e34b4b4b870442b7b57fc370e970f, type: 2}
   - {fileID: 11400000, guid: d4f72e8060893f24dbb3f10d1b68b025, type: 2}
   - {fileID: 11400000, guid: cc5f3faf04a260f4582d96281cd9a37b, type: 2}
   - {fileID: 11400000, guid: be95a48fe9d0c59489993940e920eb5d, type: 2}
-  upgradeButtons:
-  - {fileID: 223706171}
-  - {fileID: 881374698}
   upgradeText:
   - {fileID: 310325610}
   - {fileID: 1558762085}
   amountOfEnemiesToSpawn: 5
   delayBeetweenWaves: 5
   timeTillUpgradeUIActivates: 2
+  scytheCount: 0
 --- !u!82 &1482709322
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15209,6 +15225,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4073848816190784, guid: d7fd0f034fb608643a24ead27702c3a3, type: 3}
   m_PrefabInstance: {fileID: 1550869040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645804749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5376952605968514534, guid: 9a1469cae1ae22e39a862e848c52e475, type: 3}
+  m_PrefabInstance: {fileID: 451240031}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1653519290 stripped
 Transform:

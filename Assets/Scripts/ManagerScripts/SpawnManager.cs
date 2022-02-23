@@ -121,18 +121,20 @@ public class SpawnManager : MonoBehaviour
     void ActivateUpgradeUI()
     {
         upgradeUI.gameObject.SetActive(true);
-        player.GetComponent<Player>().enabled = false;
-        Time.timeScale = 0;
+        upgradeUI.GetComponent<Animator>().SetTrigger("FadeIn");
+        //player.GetComponent<Player>().enabled = false;
+        //Time.timeScale = 0;
     }
     public bool DeactivateUpgradeUI()
     {
-        if (Time.timeScale == 0 && upgradeSelected)
+        if (upgradeSelected)
         {
+            upgradeUI.GetComponent<Animator>().SetTrigger("FadeOut");
             ResetUpgrades();
-            Time.timeScale = 1;
-            upgradeUI.gameObject.SetActive(false);
+            //Time.timeScale = 1;
+            //upgradeUI.gameObject.SetActive(false);
             upgradeSelected = false;
-            player.GetComponent<Player>().enabled = true;
+            //player.GetComponent<Player>().enabled = true;
             return true;
         }
         else

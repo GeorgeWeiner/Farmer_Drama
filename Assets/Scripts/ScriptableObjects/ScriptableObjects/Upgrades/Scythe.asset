@@ -15,3 +15,5 @@ MonoBehaviour:
   upgradeImg: {fileID: 21300000, guid: 614aee87943f7b24ca013cea531523b4, type: 3}
   description: Scythe of death
   scythe: {fileID: 1983903536892367032, guid: feaef0ff0087b964d82a85d6ed0af18e, type: 3}
+  dmgUpOnMaxScythes: 0
+  maxSizeCount: 4
