@@ -6,11 +6,28 @@ using UnityEngine;
 public class RotatingScythe : Upgrade
 {
     [SerializeField] GameObject scythe;
+    [SerializeField] int dmgUpOnMaxScythes;
+    [SerializeField] int maxSizeCount;
     public override void UpgradeFunction(GameObject player)
     {
         SpawnManager.instance.UpgradSelected = true;
-        var tempObj = Instantiate(scythe, new Vector3(player.transform.position.x, player.transform.position.y + 1f, player.transform.position.z + scythe.GetComponent<Scythe>().MaxDistance) , Quaternion.identity);
-        tempObj.GetComponent<Scythe>().Player = player.transform;
-        tempObj.GetComponent<Scythe>().RotationPoint = GameObject.FindGameObjectWithTag("RotationPoint").transform;
+        if (SpawnManager.instance.ScytheCount <= 4)
+        {
+            SpawnManager.instance.ScytheCount +=  dmgUpOnMaxScythes;
+            var tempObj = Instantiate(scythe, SpawnManager.instance.SpawnPoints.position, Quaternion.identity);
+            tempObj.transform.SetParent(SpawnManager.instance.SpawnPoints, false);
+            tempObj.GetComponent<Scythe>().Player = player.transform;
+            tempObj.GetComponent<Scythe>().RotationPoint = GameObject.FindGameObjectWithTag("RotationPoint").transform;
+            
+        }
+        else
+        {
+            GameObject[] scyythesSpawned = GameObject.FindGameObjectsWithTag("Scythe");
+            foreach (var scythe in scyythesSpawned)
+            {
+                scythe.GetComponent<Scythe>().ScytheDmg += dmgUpOnMaxScythes;
+            }
+        }
+   
     }
 }

@@ -7,6 +7,7 @@ public class Scythe : MonoBehaviour
     [SerializeField] float rotationSpeed;
     [SerializeField] float scytheRotationSpeed;
     [SerializeField] float dmg;
+    public float ScytheDmg { get { return dmg; } set { dmg = value; } }
     [SerializeField] float maxDistance;
     public float MaxDistance => maxDistance;
     [SerializeField] Transform player;
@@ -19,37 +20,20 @@ public class Scythe : MonoBehaviour
         {
             RotateAroundPlayer();
             Rotate();
-            MoveTowardsPlayer();
         }
     }
     void RotateAroundPlayer()
     {
         if (player != null)
         {
-            rotationPoint.position = new Vector3(player.position.x, player.position.y + 1f, player.position.z);
-            if (Time.timeScale == 1)
-            {
-                transform.RotateAround(rotationPoint.position, rotationPoint.up, rotationSpeed * Time.deltaTime);
-            }
+            rotationPoint.position = player.transform.position;
+            rotationPoint.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         }
-    }
-    void MoveTowardsPlayer()
-    {
-
-        if (Mathf.Sqrt((player.transform.position - transform.position).sqrMagnitude) >= maxDistance)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, player.position.y + 1f, player.position.z), Time.deltaTime * 5);
-        }
-        else
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, player.position.y + 1f, player.position.z), -(Time.deltaTime * 5));
-        }
-
     }
     void Rotate()
     {
-        //transform.Rotate(Vector3.up * scytheRotationSpeed * Time.deltaTime);
-        transform.LookAt(new Vector3(player.position.x, player.position.y + 1f, player.position.z) , Vector3.up);
+        ////transform.Rotate(Vector3.up * scytheRotationSpeed * Time.deltaTime);
+        //transform.LookAt(new Vector3(player.position.x, player.position.y + 1f, player.position.z) , Vector3.up);
     }
     private void OnTriggerEnter(Collider other)
     {
