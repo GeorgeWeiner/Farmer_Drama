@@ -8790,6 +8790,10 @@ PrefabInstance:
       propertyPath: playerAttackSounds.Array.data[3].audioClip
       value: 
       objectReference: {fileID: 8300000, guid: a2dce5fb8496a8441902446cf11b4c41, type: 3}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: playerAttackSounds.Array.data[3].soundType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9062623278319469931, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
       propertyPath: m_Name
       value: SoundManager

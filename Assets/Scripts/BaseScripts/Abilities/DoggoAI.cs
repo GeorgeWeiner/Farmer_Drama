@@ -35,22 +35,25 @@ public class DoggoAI : EnemyAI
     }
     protected override void ChaseTarget()
     {
-        if (CheckIfEnemiesAreInSight() && currentState == AIStates.chasing)
+        if (player != null)
         {
-            agent.isStopped = false;
-            target = GameObject.FindGameObjectWithTag("Enemy").transform;
-            agent.SetDestination(target.position);
-        }
-        else if (CalculateDistanceToPlayer() >= 4f)
-        {
-            agent.isStopped = false;
-            target = player.transform;
-            agent.SetDestination(target.position);
+            if (CheckIfEnemiesAreInSight() && currentState == AIStates.chasing)
+            {
+                agent.isStopped = false;
+                target = GameObject.FindGameObjectWithTag("Enemy").transform;
+                agent.SetDestination(target.position);
+            }
+            else if (CalculateDistanceToPlayer() >= 4f)
+            {
+                agent.isStopped = false;
+                target = player.transform;
+                agent.SetDestination(target.position);
 
-        }
-        else
-        {
-            agent.isStopped = true;
+            }
+            else
+            {
+                agent.isStopped = true;
+            }
         }
     }
     bool CheckIfEnemiesAreInSight()

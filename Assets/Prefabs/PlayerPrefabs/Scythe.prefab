@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983903536892367032}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6390263, y: 1.897, z: -1.983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4774512918539437757}
@@ -62,7 +62,7 @@ MonoBehaviour:
   rotationSpeed: 300
   scytheRotationSpeed: 200
   dmg: 5
-  maxDistance: 3
+  maxDistance: 4
   player: {fileID: 0}
   rotationPoint: {fileID: 0}
 --- !u!54 &-8275288833129916075
@@ -77,7 +77,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
@@ -106,13 +106,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6950998511926912398}
-  m_LocalRotation: {x: 0.7326236, y: -0, z: -0, w: 0.680634}
-  m_LocalPosition: {x: 0, y: -0.025, z: 0.338}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.8572395, y: 1.8572395, z: 1.8572395}
   m_Children: []
   m_Father: {fileID: 1983903536892367031}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 94.21399, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!33 &2480863464774241723
 MeshFilter:
   m_ObjectHideFlags: 0
