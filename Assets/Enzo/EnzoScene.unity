@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18029153, g: 0.2257241, b: 0.30693024, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16311,7 +16311,7 @@ MonoBehaviour:
   - {fileID: 1558762085}
   amountOfEnemiesToSpawn: 5
   delayBeetweenWaves: 5
-  timeTillUpgradeUIActivates: 0
+  timeTillUpgradeUIActivates: 2
 --- !u!82 &1482709322
 AudioSource:
   m_ObjectHideFlags: 0

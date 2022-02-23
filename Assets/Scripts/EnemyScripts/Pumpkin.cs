@@ -14,7 +14,7 @@ public class Pumpkin : EnemyAI
     protected override void AttackTarget()
     {
         agent.isStopped = true;
-        if (canAttack)
+        if (target != null && canAttack)
         {
             StartCoroutine(AttackCd());
             transform.LookAt(target.position);

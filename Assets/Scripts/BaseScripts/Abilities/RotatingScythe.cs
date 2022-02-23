@@ -9,7 +9,7 @@ public class RotatingScythe : Upgrade
     public override void UpgradeFunction(GameObject player)
     {
         SpawnManager.instance.UpgradSelected = true;
-        var tempObj = Instantiate(scythe, new Vector3(player.transform.position.x, player.transform.position.y + 1.5f, player.transform.position.z) , Quaternion.identity);
+        var tempObj = Instantiate(scythe, new Vector3(player.transform.position.x, player.transform.position.y + 1f, player.transform.position.z + scythe.GetComponent<Scythe>().MaxDistance) , Quaternion.identity);
         tempObj.GetComponent<Scythe>().Player = player.transform;
         tempObj.GetComponent<Scythe>().RotationPoint = GameObject.FindGameObjectWithTag("RotationPoint").transform;
     }
