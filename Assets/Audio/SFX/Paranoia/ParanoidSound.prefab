@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1170562631536034173}
   - component: {fileID: 1170562631536034174}
-  - component: {fileID: 2261500978965863417}
+  - component: {fileID: 2048986102}
   m_Layer: 0
   m_Name: ParanoidSound
   m_TagString: Untagged
@@ -128,7 +128,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!164 &2261500978965863417
+--- !u!164 &2048986102
 AudioReverbFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

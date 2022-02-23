@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18029153, g: 0.2257241, b: 0.30693024, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81dc145a3bdaa168b0ef6b67ebb707d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 277772487}
+  pauseMenu: {fileID: 79844884}
   musicPlayer: {fileID: 728615324}
 --- !u!4 &60505892
 Transform:
@@ -737,6 +737,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4427327674443824, guid: c6ad92f3822941a4b87102b4515d3412, type: 3}
   m_PrefabInstance: {fileID: 76375360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &79844884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5633948346888138439, guid: 94e0685e68226dfa18b18d4261bf589b, type: 3}
+  m_PrefabInstance: {fileID: 145197622}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &83418631
 PrefabInstance:
@@ -4576,7 +4581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5307554400288154526, guid: 9a1469cae1ae22e39a862e848c52e475, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5307554400288154526, guid: 9a1469cae1ae22e39a862e848c52e475, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5436,7 +5441,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &512293625
 PrefabInstance:
@@ -7668,7 +7673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9062623278319469933, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 9062623278319469933, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
       propertyPath: m_LocalPosition.x
