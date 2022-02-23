@@ -12,13 +12,10 @@ public class RotatingScythe : Upgrade
     {
         SpawnManager.instance.UpgradSelected = true;
         if (SpawnManager.instance.ScytheCount <= 4)
-        {
-            SpawnManager.instance.ScytheCount +=  dmgUpOnMaxScythes;
+        {   
             var tempObj = Instantiate(scythe, SpawnManager.instance.SpawnPoints.position, Quaternion.identity);
-            tempObj.transform.SetParent(SpawnManager.instance.SpawnPoints, false);
-            tempObj.GetComponent<Scythe>().Player = player.transform;
-            tempObj.GetComponent<Scythe>().RotationPoint = GameObject.FindGameObjectWithTag("RotationPoint").transform;
-            
+            tempObj.transform.SetParent(SpawnManager.instance.SpawnPoints, true);
+            SpawnManager.instance.ScytheCount += 1;
         }
         else
         {

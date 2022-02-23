@@ -46,7 +46,7 @@ public class ItemSpawner : MonoBehaviour
 
             Vector3 newPos = new Vector3(xPos, spawnY, zPos);
 
-            GameObject item = Instantiate(tempItemPrefab, newPos, Quaternion.identity) as GameObject;
+            GameObject item = Instantiate(tempItemPrefab, newPos + Vector3.up , Quaternion.identity) as GameObject;
             item.transform.parent = transform; //So that the item is instantiated in the GameObject "ItemSpawner".
         }
     }
