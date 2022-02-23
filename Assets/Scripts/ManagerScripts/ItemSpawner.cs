@@ -22,7 +22,7 @@ public class ItemSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //SpawnItemOnMap(Items, maxItemOnField);
+        SpawnItemOnMap(Items, maxItemOnField);
     }
 
     void Update()
