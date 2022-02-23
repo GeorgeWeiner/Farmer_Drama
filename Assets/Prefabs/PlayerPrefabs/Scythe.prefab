@@ -62,7 +62,7 @@ MonoBehaviour:
   rotationSpeed: 300
   scytheRotationSpeed: 200
   dmg: 5
-  maxDistance: 10
+  maxDistance: 4
   player: {fileID: 0}
   rotationPoint: {fileID: 0}
 --- !u!54 &-8275288833129916075

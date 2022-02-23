@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Doggo
   m_EditorClassIdentifier: 
   upgradeImg: {fileID: 21300000, guid: dfbba743b546c604fa231817e6eb734a, type: 3}
-  description: asdadsadafgggg
+  description: A mad dog who loves to eat vegetabales
   companion: {fileID: 5291737767092353678, guid: 9e7fe699a15ee404ea291ea48e8b6c7d, type: 3}
