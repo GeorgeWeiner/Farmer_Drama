@@ -15426,6 +15426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParanoidSound
       objectReference: {fileID: 0}
+    - target: {fileID: 1170562631536034175, guid: 816d0669968d89e4db280399245a13ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816d0669968d89e4db280399245a13ab, type: 3}
 --- !u!1 &1672745853
