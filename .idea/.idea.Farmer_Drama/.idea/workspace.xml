@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c84be713-f4c8-4933-9bb9-2f6a5d0ae916" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Farmer_Drama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Farmer_Drama/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UserInterfaceAnimations/UI-Animations.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UserInterfaceAnimations/UI-Animations.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Enzo/EnzoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enzo/EnzoScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/NewEnemyPrefabs/Onion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/NewEnemyPrefabs/Onion.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/NewEnemyPrefabs/Pumpkin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/NewEnemyPrefabs/Pumpkin.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/NewEnemyPrefabs/Tomato.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/NewEnemyPrefabs/Tomato.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UserInterface/UI-Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UserInterface/UI-Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/WaveIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/WaveIndicator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UserInterface/Pause Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UserInterface/Pause Menu.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +71,7 @@
       <workItem from="1645374520858" duration="10340000" />
       <workItem from="1645459743267" duration="15082000" />
       <workItem from="1645559042849" duration="68000" />
-      <workItem from="1645559318861" duration="6540000" />
+      <workItem from="1645559318861" duration="8571000" />
     </task>
     <servers />
   </component>
