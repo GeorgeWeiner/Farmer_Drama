@@ -237,6 +237,8 @@ MonoBehaviour:
   attackSpeed: 0
   speed: 0
   dmg: 0
+  isOnCocain: 0
+  isOnBoosterVaccination: 0
 --- !u!1 &975006909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,7 +2072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3976972108601425134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2083,12 +2085,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47303f304983066499aec39824823ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 4
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
   axe: {fileID: 8167815014702606591}
-  axeDmg: 10
 --- !u!143 &3976972108601425135
 CharacterController:
   m_ObjectHideFlags: 0
