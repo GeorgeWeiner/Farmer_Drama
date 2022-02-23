@@ -19,7 +19,6 @@ public class Scythe : MonoBehaviour
         if (player != null)
         {
             RotateAroundPlayer();
-            Rotate();
         }
     }
     void RotateAroundPlayer()
@@ -29,11 +28,6 @@ public class Scythe : MonoBehaviour
             rotationPoint.position = player.transform.position;
             rotationPoint.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         }
-    }
-    void Rotate()
-    {
-        ////transform.Rotate(Vector3.up * scytheRotationSpeed * Time.deltaTime);
-        //transform.LookAt(new Vector3(player.position.x, player.position.y + 1f, player.position.z) , Vector3.up);
     }
     private void OnTriggerEnter(Collider other)
     {
