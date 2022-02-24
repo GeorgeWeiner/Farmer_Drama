@@ -16,6 +16,7 @@ public class RotatingScythe : Upgrade
             var tempObj = Instantiate(scythe, SpawnManager.instance.SpawnPoints.position, Quaternion.identity);
             tempObj.transform.SetParent(SpawnManager.instance.SpawnPoints, true);
             SpawnManager.instance.ScytheCount += 1;
+            tempObj.transform.LookAt(new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z));
         }
         else
         {

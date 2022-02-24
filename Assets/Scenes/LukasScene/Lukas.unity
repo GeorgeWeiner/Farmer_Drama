@@ -1776,12 +1776,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b7117b43ae20b4f8b7e80f994bd345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnXMin: 15.98
-  spawnXMax: 25.5
-  spawnZMin: 14.21
-  spawnZMax: 43.22
-  spawnY: 0
-  maxItemOnField: 4
+  spawnXMin: -38
+  spawnXMax: 23
+  spawnZMin: -52
+  spawnZMax: 2
+  spawnY: 0.5
+  maxItemOnField: 10
   itemDropDespawnTimer: 20
   itemDropChance: 100
   Items:
