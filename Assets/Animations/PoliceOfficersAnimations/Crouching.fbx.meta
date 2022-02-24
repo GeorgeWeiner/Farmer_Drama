@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc01ef92061342140a18716bc64dcdb4
+guid: 8370e5db506f57f4f9a73de2f37f1456
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable:
@@ -10,8 +10,8 @@ ModelImporter:
       74: -203655887218126122
     second: mixamo.com
   - first:
-      74: 1059283682622351034
-    second: CrouchIdel
+      74: 5147928276633869896
+    second: Crouching
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -41,19 +41,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: CrouchIdel
+      name: Crouching
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 201
+      lastFrame: 122
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -74,7 +74,7 @@ ModelImporter:
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 201
+      lastFrame: 122
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
