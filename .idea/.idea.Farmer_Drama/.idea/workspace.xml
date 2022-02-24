@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c84be713-f4c8-4933-9bb9-2f6a5d0ae916" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Farmer_Drama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Farmer_Drama/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SFX/Paranoia/ParanoidSound.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/SFX/Paranoia/ParanoidSound.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enzo/EnzoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enzo/EnzoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enzo/EnzoScene/EnzoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enzo/EnzoScene/EnzoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ManagerScripts/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ManagerScripts/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +73,7 @@
       <workItem from="1645459743267" duration="15082000" />
       <workItem from="1645559042849" duration="68000" />
       <workItem from="1645559318861" duration="8898000" />
+      <workItem from="1645719343304" duration="2001000" />
     </task>
     <servers />
   </component>
