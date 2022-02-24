@@ -17,7 +17,7 @@ public class RotationPoint : MonoBehaviour
     {
         if (player != null)
         {
-            transform.position = player.transform.position;
+            transform.position = player.transform.position + Vector3.up;
             transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         }
     }

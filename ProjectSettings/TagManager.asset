@@ -8,6 +8,7 @@ TagManager:
   - Item
   - RotationPoint
   - Scythe
+  - Axe
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - UI
   - Ground
   - Enemy
-  - 
+  - HitAbleObject
   - 
   - 
   - 

@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
             animatoer.SetTrigger("isAttacking");
             animatoer.speed = stats.AttackSpeed;
 
-            Collider[] enemys = Physics.OverlapSphere(axe.position, 0.1f, enemyLayer);
+            Collider[] enemys = Physics.OverlapSphere(axe.position, 1f, enemyLayer);
             if (!isHittingOnce)
             {
                 foreach (var obj in enemys)
