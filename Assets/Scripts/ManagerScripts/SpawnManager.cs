@@ -11,6 +11,7 @@ using TMPro;
 public class SpawnManager : MonoBehaviour
 {   [SerializeField] GameObject upgradeUI;
     [SerializeField] GameObject player;
+    [SerializeField] TextMeshProUGUI aliveEnemiesCount;
     [SerializeField] List<GameObject> allEnemies;
     [SerializeField] List<GameObject> currentlyAliveEnemies;
     [SerializeField] List<GameObject> allSpawnPoints;
@@ -51,6 +52,7 @@ public class SpawnManager : MonoBehaviour
     private void Update()
     {
         CheckIfAllEnemiesAreDead();
+        ShowAllAliveEnemies();
     }
 
     private IEnumerator SpawnEnemies()
@@ -117,6 +119,19 @@ public class SpawnManager : MonoBehaviour
     public void RemoveKilledEnemies(GameObject enemyToRemove)
     {
         currentlyAliveEnemies.Remove(enemyToRemove);
+    }
+    void ShowAllAliveEnemies()
+    {
+        if(currentlyAliveEnemies.Count > 0)
+        {
+            aliveEnemiesCount.gameObject.SetActive(true);
+            aliveEnemiesCount.text = currentlyAliveEnemies.Count.ToString();
+        }
+        else
+        {
+           aliveEnemiesCount.gameObject.SetActive(false);
+        }
+        
     }
     void ActivateUpgradeUI()
     {
