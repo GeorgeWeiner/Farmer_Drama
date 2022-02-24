@@ -8,7 +8,7 @@ public class WaveIndicator : MonoBehaviour, IUserInterfaceElement
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private Animation _animation;
     
-    private int _waveCount; 
+    private int _waveCount;
     private SpawnManager _spawnManager;
 
     private void Awake()

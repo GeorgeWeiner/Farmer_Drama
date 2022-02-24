@@ -25,6 +25,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] float timeTillUpgradeUIActivates;
     [SerializeField] int scytheCount;
     public int ScytheCount { get { return scytheCount; } set { scytheCount = value; } }
+    int waveCount;
     static public SpawnManager instance;
 
     public event Action OnWaveBegin;
@@ -46,6 +47,7 @@ public class SpawnManager : MonoBehaviour
     }
     private void Start()
     {
+        SoundManager.instance.PlayRandomVoiceLine();
         StartCoroutine(SpawnEnemies());
     }
 
@@ -57,6 +59,8 @@ public class SpawnManager : MonoBehaviour
 
     private IEnumerator SpawnEnemies()
     {
+        waveCount++;
+        CheckIfVoiceLIneCanBePlayed();
         OnWaveBegin?.Invoke();
         yield return new WaitForSeconds(3);
         float delayBetweenEnemySpawn = 0.5f;
@@ -139,6 +143,13 @@ public class SpawnManager : MonoBehaviour
         upgradeUI.GetComponent<Animator>().SetTrigger("FadeIn");
         //player.GetComponent<Player>().enabled = false;
         //Time.timeScale = 0;
+    }
+    void CheckIfVoiceLIneCanBePlayed()
+    {
+        if(waveCount % 3 == 0)
+        {
+            SoundManager.instance.PlayRandomVoiceLine();
+        }
     }
     public bool DeactivateUpgradeUI()
     {

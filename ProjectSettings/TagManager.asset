@@ -9,6 +9,7 @@ TagManager:
   - RotationPoint
   - Scythe
   - Axe
+  - ThunderBoltSpawner
   layers:
   - Default
   - TransparentFX

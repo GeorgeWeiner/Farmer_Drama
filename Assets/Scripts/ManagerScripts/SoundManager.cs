@@ -74,7 +74,12 @@ public class SoundManager : MonoBehaviour
         int randomSound = Random.Range(0, playerAttackSounds.Count);
         CreateAudioObject(playerAttackSounds[randomSound]);
     }
+    public void PlayRandomVoiceLine()
+    {
+        int randomVoiceLine = Random.Range(0,voiceLines.Count);
+        CreateAudioObject(voiceLines[randomVoiceLine]);
 
+    }
     private bool ISSoundPlayable(SoundFile sound, float offset)
     {
         if(sound.SoundTimer - offset <= Time.time)

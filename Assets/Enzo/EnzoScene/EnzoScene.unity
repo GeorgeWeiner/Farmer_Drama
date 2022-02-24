@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18029153, g: 0.2257241, b: 0.30693024, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7662,7 +7662,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
       propertyPath: voiceLines.Array.size
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
       propertyPath: soundEffects.Array.size
@@ -7671,6 +7671,34 @@ PrefabInstance:
     - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
       propertyPath: playerAttackSounds.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[4].volume
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[5].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[6].volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
       propertyPath: soundEffects.Array.data[0].volume
@@ -7700,6 +7728,34 @@ PrefabInstance:
       propertyPath: soundEffects.Array.data[6].volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d4aa4733dde721a5a8b783b49b91ed6, type: 3}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[1].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6edcb3c4433dbfb878130050a9e72af4, type: 3}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[2].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fa144f05d4e6b95ba8a067c3dc0148d, type: 3}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[3].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d80a6cf875bd24181bf0851d262be217, type: 3}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[4].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ececfef0593f831978730ff16523cae7, type: 3}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[5].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: aa60df7fcc4c38917a0166bdcc8b19b0, type: 3}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[6].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6edcb3c4433dbfb878130050a9e72af4, type: 3}
     - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
       propertyPath: soundEffects.Array.data[0].audioClip
       value: 
@@ -7770,6 +7826,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
       propertyPath: voiceLines.Array.data[1].voicelineText
+      value: Eeeeugh. That stinks man, fuck.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[2].voicelineText
+      value: Eeeeugh. That stinks man, fuck.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[3].voicelineText
+      value: Eeeeugh. That stinks man, fuck.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[4].voicelineText
+      value: Eeeeugh. That stinks man, fuck.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[5].voicelineText
+      value: Eeeeugh. That stinks man, fuck.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
+      propertyPath: voiceLines.Array.data[6].voicelineText
       value: Eeeeugh. That stinks man, fuck.
       objectReference: {fileID: 0}
     - target: {fileID: 9062623278319469930, guid: d21c7b95dfecc9e9eb05aab86aad7a32, type: 3}
@@ -13961,10 +14037,7 @@ MonoBehaviour:
   - {fileID: 1466812423}
   - {fileID: 1464062442}
   upgradeList:
-  - {fileID: 11400000, guid: b09e34b4b4b870442b7b57fc370e970f, type: 2}
-  - {fileID: 11400000, guid: d4f72e8060893f24dbb3f10d1b68b025, type: 2}
-  - {fileID: 11400000, guid: cc5f3faf04a260f4582d96281cd9a37b, type: 2}
-  - {fileID: 11400000, guid: be95a48fe9d0c59489993940e920eb5d, type: 2}
+  - {fileID: 11400000, guid: 2a12a0d35074db248bc1fbb0341d15e0, type: 2}
   upgradeText:
   - {fileID: 1226415103}
   - {fileID: 371759621}
