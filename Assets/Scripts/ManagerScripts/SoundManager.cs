@@ -23,8 +23,9 @@ public enum ESoundType
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] List<SoundFile> soundEffects;
-    [SerializeField] List<SoundFile> playerAttackSounds;
+    [SerializeField] private List<SoundFile> soundEffects;
+    [SerializeField] private List<SoundFile> playerAttackSounds;
+    [SerializeField] private List<VoiceLine> voiceLines;
 
     public static SoundManager instance;
 
@@ -72,9 +73,9 @@ public class SoundManager : MonoBehaviour
     {
         int randomSound = Random.Range(0, playerAttackSounds.Count);
         CreateAudioObject(playerAttackSounds[randomSound]);
-       
     }
-    bool ISSoundPlayable(SoundFile sound, float offset)
+
+    private bool ISSoundPlayable(SoundFile sound, float offset)
     {
         if(sound.SoundTimer - offset <= Time.time)
         {
@@ -90,11 +91,13 @@ public class SoundManager : MonoBehaviour
             return false;
         }
     }
-    void SetTimer(SoundFile sound)
+
+    private void SetTimer(SoundFile sound)
     {
         sound.SoundTimer = Time.time + sound.AudioClip.length;
     }
-    void CreateAudioObject(SoundFile fileToPlay)
+
+    private void CreateAudioObject(SoundFile fileToPlay)
     {
         var tempObj = new GameObject();
         var tempAudioSource = tempObj.AddComponent<AudioSource>();
@@ -106,21 +109,28 @@ public class SoundManager : MonoBehaviour
 [System.Serializable]
 public class SoundFile
 {
-    [SerializeField] ESoundType soundType;
+    [SerializeField] private ESoundType soundType;
     public ESoundType SoundType => soundType;
 
-    [SerializeField] AudioClip audioClip;
+    [SerializeField] private AudioClip audioClip;
     public AudioClip AudioClip => audioClip;
 
-    [SerializeField][Range(0,1)] float volume;
+    [SerializeField][Range(0,1)] private float volume;
     public float Volume => volume;
 
-    [SerializeField] float offSet;
+    [SerializeField] private float offSet;
     public float Offset => offSet;
 
-    [SerializeField] bool isStackable;
+    [SerializeField] private bool isStackable;
     public bool IsStackable => isStackable;
 
     private float soundTimer;
     public float SoundTimer { get { return soundTimer; } set { soundTimer = value; } }
+}
+
+[System.Serializable]
+public class VoiceLine : SoundFile
+{
+    [SerializeField] private string voicelineText;
+    public string VoicelineText => voicelineText;
 }
