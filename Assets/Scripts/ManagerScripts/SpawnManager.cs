@@ -26,6 +26,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] int scytheCount;
     public int ScytheCount { get { return scytheCount; } set { scytheCount = value; } }
     int waveCount;
+    public int WaveCount { get { return waveCount; } }
     static public SpawnManager instance;
 
     public event Action OnWaveBegin;

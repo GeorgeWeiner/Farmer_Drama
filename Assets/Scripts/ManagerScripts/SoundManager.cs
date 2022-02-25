@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; 
 
 public enum ESoundType
 {
@@ -11,6 +12,7 @@ public enum ESoundType
     EnemyDies,
     GameOver,
     ItemDrop,
+    ScytheHitSound,
     HealthUp,
     Upgrade,
     CocainIsGoingCrazy,
@@ -23,6 +25,7 @@ public enum ESoundType
 
 public class SoundManager : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI voiceLineText;
     [SerializeField] private List<SoundFile> soundEffects;
     [SerializeField] private List<SoundFile> playerAttackSounds;
     [SerializeField] private List<VoiceLine> voiceLines;
@@ -78,6 +81,7 @@ public class SoundManager : MonoBehaviour
     {
         int randomVoiceLine = Random.Range(0,voiceLines.Count);
         CreateAudioObject(voiceLines[randomVoiceLine]);
+        StartCoroutine(ShowVoiceLineText(voiceLines[randomVoiceLine]));
 
     }
     private bool ISSoundPlayable(SoundFile sound, float offset)
@@ -110,6 +114,13 @@ public class SoundManager : MonoBehaviour
         tempAudioSource.PlayOneShot(fileToPlay.AudioClip);
         Destroy(tempObj, fileToPlay.AudioClip.length);
     }
+    IEnumerator ShowVoiceLineText(VoiceLine line)
+    {
+        voiceLineText.gameObject.SetActive(true);
+        voiceLineText.text = line.VoicelineText;
+        yield return new WaitForSeconds(line.AudioClip.length);
+        voiceLineText.gameObject.SetActive(false);
+    }
 }
 [System.Serializable]
 public class SoundFile
@@ -136,6 +147,6 @@ public class SoundFile
 [System.Serializable]
 public class VoiceLine : SoundFile
 {
-    [SerializeField] private string voicelineText;
+    [SerializeField][TextArea(10,10)] private string voicelineText;
     public string VoicelineText => voicelineText;
 }
