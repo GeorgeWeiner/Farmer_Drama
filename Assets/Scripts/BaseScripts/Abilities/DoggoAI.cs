@@ -22,6 +22,7 @@ public class DoggoAI : EnemyAI
         if (canAttack)
         {
             int counter = 0;
+            SoundManager.instance.PlayAudioClip(ESoundType.DoggoAttacks, GetComponent<AudioSource>(), false);
             StartCoroutine(AttackCd());
             Collider[] attackableTargets = Physics.OverlapSphere(transform.position + Vector3.forward, attackRange, targetLayer);
             for (int i = 0; i < attackableTargets.Length; i++)

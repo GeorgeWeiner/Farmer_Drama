@@ -47,7 +47,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   player: {fileID: 0}
-  thunderBolt: {fileID: 6181508143734002916, guid: 7a5f751e1bff7504197ad4ae72822f80, type: 3}
+  thunderBolt: {fileID: 7947240227638964323, guid: 5242db2d31a4cb74c8d4c261fcf714d8, type: 3}
   amountOfThunderbolts: 2
   spawnRadius: 15
-  delayBetweenThunderBolts: 1
+  delayBetweenThunderBolts: 2

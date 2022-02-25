@@ -30,12 +30,13 @@ public class ThunderBoltSpawner : MonoBehaviour
         {
             if(CheckIfEnemiesAreInRange())
             {
-                var tempObj = Instantiate(thunderBolt, transform.position, Quaternion.identity);
+                var tempObj = Instantiate(thunderBolt, transform.position + Vector3.up * 6, Quaternion.identity);
                 SearchTarget(tempObj.GetComponent<ThunderBoltProjectile>());
                 
             }
             yield return new WaitForSeconds(delayBetweenThunderBolts);
         }
+        yield return new WaitForSeconds(3);
         StartCoroutine(SpawnThunderBolts());  
     }
     void SearchTarget(ThunderBoltProjectile thunder)

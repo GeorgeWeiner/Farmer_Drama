@@ -17,7 +17,8 @@ public enum ESoundType
     OnWaveBegin,
     PlayerWalking,
     TomatoSound,
-    TomatoExplosion
+    TomatoExplosion,
+    DoggoAttacks
 }
 
 

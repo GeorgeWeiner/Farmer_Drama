@@ -54,3 +54,10 @@ MonoBehaviour:
     volume: 0
     offSet: 0
     isStackable: 0
+  - soundType: 14
+    audioClip: {fileID: 8300000, guid: d0f03926b87576a498e29d47e320a6af, type: 3}
+    volume: 0
+    offSet: 0
+    isStackable: 0
+  playerAttackSounds: []
+  voiceLines: []
