@@ -10,6 +10,7 @@ public class PlayerDeath : Death
     [SerializeField] string gameOverSceneName;
     public override void OnDie()
     {
+        SaveSystem.SaveHighScore(SpawnManager.instance.WaveCount);
         GetComponent<Animator>().SetTrigger("isDying");
         gameOverFadeIn.gameObject.SetActive(true);
         StartCoroutine(GameOverScreen());
@@ -17,7 +18,6 @@ public class PlayerDeath : Death
 
     IEnumerator GameOverScreen()
     {
-        Debug.Log("HAAAAAAAA");
         yield return new WaitForSeconds(timeTillGameOverScreen);
         SceneManager.LoadScene(gameOverSceneName);
     }

@@ -98,7 +98,7 @@ MonoBehaviour:
   explosionParticles: {fileID: 8716659444648367933, guid: cf18f3555f658544fae0d928eb14a6fc, type: 3}
   startColor: {r: 0, g: 0, b: 0, a: 0}
   endColor: {r: 1, g: 0.9203187, b: 0, a: 1}
-  explosionBlinkSpeed: 20
+  explosionBlinkSpeed: 10
 --- !u!114 &6764853572937616824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e6e5794da672644a2fa7471b78607f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 1432622951453171453, guid: a098177b73a032849b9af32720682364, type: 3}
 --- !u!136 &2181015357300928422
 CapsuleCollider:
   m_ObjectHideFlags: 0
