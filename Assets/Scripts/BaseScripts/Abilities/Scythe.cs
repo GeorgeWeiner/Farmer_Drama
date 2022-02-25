@@ -10,7 +10,7 @@ public class Scythe : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<IDamageable>() != null)
+        if (other.GetComponent<IDamageable>() != null && !other.gameObject.CompareTag("Player"))
         {
             SoundManager.instance.PlayAudioClip(ESoundType.ScytheHitSound, GetComponent<AudioSource>(), false);
             other.GetComponent<IDamageable>().TakeDmg(dmg);

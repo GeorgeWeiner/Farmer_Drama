@@ -14,6 +14,7 @@ public class Syringe : Items
     {
         Debug.Log("Kommt in SetNewTempStats rein ");
         _other.gameObject.GetComponent<Stats>().AddTempDmg(10f);
+        _other.gameObject.GetComponent<Stats>().AddTempSpeed(10f);
         _other.gameObject.GetComponent<Stats>().IsOnBoosterVaccination = true;
         StartCoroutine(BuffDuration(10f, _other)); //Buff currently lasts 10 seconds
     }

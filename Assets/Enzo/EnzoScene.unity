@@ -13548,6 +13548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeUI: {fileID: 1645804749}
   player: {fileID: 1306768382}
+  aliveEnemiesCount: {fileID: 0}
   allEnemies:
   - {fileID: 7082912909190315598, guid: 1396a6ade2cd8194a8be7fc586c57932, type: 3}
   - {fileID: 1186189569795157381, guid: 182648911cdf5a34391b90da3cfa54fc, type: 3}

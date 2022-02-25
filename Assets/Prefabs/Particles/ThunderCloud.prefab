@@ -9632,7 +9632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseSpeed: 5
-  dmg: 0.001
+  dmg: 0.1
 --- !u!65 &8669583589086614859
 BoxCollider:
   m_ObjectHideFlags: 0
