@@ -6394,6 +6394,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6458384984750709505, guid: e82311638370cce47835043797dd99f1, type: 3}
+      propertyPath: MaxDistance
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458384984750709505, guid: e82311638370cce47835043797dd99f1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fa144f05d4e6b95ba8a067c3dc0148d, type: 3}
+    - target: {fileID: 6458384984750709505, guid: e82311638370cce47835043797dd99f1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e82311638370cce47835043797dd99f1, type: 3}
 --- !u!114 &624410019 stripped
@@ -14368,6 +14380,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4991709532540277137, guid: 5913e40a273d7080da420403533b6961, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4991709532540277137, guid: 5913e40a273d7080da420403533b6961, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 90d7b5ba3a0fdab20a88a150ae7a6f3c, type: 3}
@@ -16062,6 +16078,10 @@ PrefabInstance:
     - target: {fileID: 1170562631536034175, guid: 816d0669968d89e4db280399245a13ab, type: 3}
       propertyPath: m_Name
       value: ParanoidSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170562631536034175, guid: 816d0669968d89e4db280399245a13ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816d0669968d89e4db280399245a13ab, type: 3}
