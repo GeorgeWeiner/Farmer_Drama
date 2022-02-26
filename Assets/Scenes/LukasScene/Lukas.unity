@@ -6664,6 +6664,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1574952571281824144, guid: e82311638370cce47835043797dd99f1, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 284196680}
+    - target: {fileID: 1574952571281824144, guid: e82311638370cce47835043797dd99f1, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1502846547}
     - target: {fileID: 2243525821327695201, guid: e82311638370cce47835043797dd99f1, type: 3}
       propertyPath: m_TagString
       value: Axe
@@ -12582,20 +12590,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2243525822331455356, guid: e82311638370cce47835043797dd99f1, type: 3}
   m_PrefabInstance: {fileID: 624410018}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1306768391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306768382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ba3e28bb016bc4bb600cf9ef55d5ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 1502846547}
-  text: {fileID: 284196680}
 --- !u!1001 &1310121327
 PrefabInstance:
   m_ObjectHideFlags: 0

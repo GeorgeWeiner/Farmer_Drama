@@ -1149,6 +1149,7 @@ GameObject:
   - component: {fileID: 2243525822331455335}
   - component: {fileID: 2243525822331455334}
   - component: {fileID: 6458384984750709505}
+  - component: {fileID: 1574952571281824144}
   m_Layer: 3
   m_Name: CrazyGuy
   m_TagString: Player
@@ -1224,6 +1225,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956bba990f4411c4cba7f35e7ef23616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverFadeIn: {fileID: 0}
+  timeTillGameOverScreen: 0
+  gameOverSceneName: 
 --- !u!95 &2243525822331455328
 Animator:
   serializedVersion: 3
@@ -1371,6 +1375,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1574952571281824144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243525822331455333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ba3e28bb016bc4bb600cf9ef55d5ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &2243525822385005667
 GameObject:
   m_ObjectHideFlags: 0
