@@ -25,7 +25,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         Time.timeScale = isPaused ? 0f : 1f;
         pauseMenu.SetActive(isPaused);
-        musicPlayer.SetActive(!isPaused);
+        //musicPlayer.SetActive(!isPaused);
         isPaused = !isPaused;
         if (isPaused)
             gameMusic.Play();
