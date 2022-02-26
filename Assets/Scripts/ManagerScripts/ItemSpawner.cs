@@ -16,6 +16,7 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] private int maxItemOnField = 1;
     [SerializeField] private float itemDropDespawnTimer = 20f;
     [SerializeField] private int itemDropChance = 10;
+    [SerializeField] float spawnDelay;
     [SerializeField] private List<GameObject> Items;
     #endregion Variables
 
@@ -23,6 +24,7 @@ public class ItemSpawner : MonoBehaviour
     void Start()
     {
         SpawnItemOnMap(Items, maxItemOnField);
+        StartCoroutine(SpawnRoutine());
     }
 
     void Update()
@@ -79,4 +81,12 @@ public class ItemSpawner : MonoBehaviour
         if(_droppedItem != null)
         Destroy(_droppedItem);
     }
+
+    IEnumerator SpawnRoutine()
+    {
+        yield return new WaitForSeconds(spawnDelay);
+        SpawnItemOnMap(Items, maxItemOnField);
+        StartCoroutine(SpawnRoutine());
+    }
+
 }

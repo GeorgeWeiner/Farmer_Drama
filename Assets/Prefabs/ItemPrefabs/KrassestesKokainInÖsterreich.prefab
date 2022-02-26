@@ -61,6 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  AttackDmgTemp: 10
+  SpeedTemp: 10
 --- !u!95 &2477687880433102638
 Animator:
   serializedVersion: 3

@@ -114,7 +114,7 @@ public class Stats : MonoBehaviour,IDamageable
     }
     public void AddTempSpeed(float _tempSpeed) 
     {
-        speed += _tempSpeed;
+        speed = _tempSpeed;
     }
     #endregion AddTempStats
 
@@ -126,7 +126,7 @@ public class Stats : MonoBehaviour,IDamageable
     }
     public void ResetTempDmg()
     {
-        dmg = currentdmg;
+        dmg -= 10;
     }
     public void ResetTempAttackSpeed()
     {

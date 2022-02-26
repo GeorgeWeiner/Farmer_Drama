@@ -34,7 +34,11 @@ public abstract class Items : MonoBehaviour
     /// <returns></returns>
     protected virtual IEnumerator BuffDuration(float _timer, Collider _collision)
     {
-        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        Component[] meshRenderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+        foreach (var renderer in meshRenderers)
+        {
+            Destroy(renderer);
+        }
         gameObject.GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(_timer);
     }

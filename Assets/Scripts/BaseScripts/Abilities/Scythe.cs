@@ -14,6 +14,7 @@ public class Scythe : MonoBehaviour
         {
             SoundManager.instance.PlayAudioClip(ESoundType.ScytheHitSound, GetComponent<AudioSource>(), false);
             other.GetComponent<IDamageable>().TakeDmg(dmg);
+            StartCoroutine(GetComponent<DmgPopUp>().ActivatePopUp(dmg, other.gameObject));
         }
     }
 }
