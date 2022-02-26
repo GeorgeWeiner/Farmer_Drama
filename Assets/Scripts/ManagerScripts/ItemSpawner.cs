@@ -13,9 +13,9 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] private float spawnY;
 
     [Header("Item Prefab & Settings")]
-    [SerializeField] private int maxItemOnField = 1;
-    [SerializeField] private float itemDropDespawnTimer = 20f;
-    [SerializeField] private int itemDropChance = 10;
+    [SerializeField] private int maxItemOnField;
+    [SerializeField] private float itemDropDespawnTimer;
+    [SerializeField] private int itemDropChance;
     [SerializeField] float spawnDelay;
     [SerializeField] private List<GameObject> Items;
     #endregion Variables
@@ -50,6 +50,7 @@ public class ItemSpawner : MonoBehaviour
 
             GameObject item = Instantiate(tempItemPrefab, newPos + Vector3.up , Quaternion.identity) as GameObject;
             item.transform.parent = transform; //So that the item is instantiated in the GameObject "ItemSpawner".
+            StartCoroutine(DespawnItem(item, itemDropDespawnTimer));
         }
     }
     /// <summary>
@@ -57,15 +58,15 @@ public class ItemSpawner : MonoBehaviour
     /// </summary>
     /// <param name="_prefablist">List of GameObjects to be instantiated.</param>
     /// <param name="_enemyPos">Vector position of enemy</param>
-    public void MobDrop(List<GameObject> _prefablist, Vector3 _enemyPos)
+    public void MobDrop(Vector3 _enemyPos)
     {
         int tempZuf = Random.Range(0, itemDropChance);
         if(tempZuf == 0)
         {
-            GameObject tempItemPrefab = _prefablist[Random.Range(0, _prefablist.Count - 1)];
-            Instantiate(tempItemPrefab, _enemyPos, Quaternion.identity);
+            GameObject tempItemPrefab = Items[Random.Range(0, Items.Count - 1)];
+            GameObject tempItem = Instantiate(tempItemPrefab, _enemyPos, Quaternion.identity);
 
-            StartCoroutine(DespawnItem(tempItemPrefab, itemDropDespawnTimer));
+            StartCoroutine(DespawnItem(tempItem, itemDropDespawnTimer));
         }
     }
     /// <summary>
