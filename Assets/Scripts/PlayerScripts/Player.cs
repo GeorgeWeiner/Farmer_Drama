@@ -10,11 +10,13 @@ public class Player : MonoBehaviour
     Vector3 velocity;
     bool isPlayerGrounded;
     bool isAttacking;
+    float overlapsShpere = 1f;
     public bool IsAttacking { set { isAttacking = value; } }
     [SerializeField] LayerMask enemyLayer;
 
     //PlayerWeapon
     [Header("PlayerWeapon")] [SerializeField] Transform axe;
+    public Transform Axe => axe;
     bool isHittingOnce;
 
     //Player Animation directions
@@ -109,16 +111,25 @@ public class Player : MonoBehaviour
             SoundManager.instance.PlayRandomAttackSound();
             animatoer.SetTrigger("isAttacking");
             animatoer.speed = stats.AttackSpeed;
-
-            Collider[] enemys = Physics.OverlapSphere(axe.position, 1f, enemyLayer);
+            if (stats.Dmg >= 50)
+            {
+                overlapsShpere = 2f;
+            }
+            else
+            {
+                overlapsShpere = 1f;
+            }
+            Collider[] enemys = Physics.OverlapSphere(axe.position, overlapsShpere, enemyLayer);
             if (!isHittingOnce)
             {
+                
                 foreach (var obj in enemys)
                 {
                     if (obj.GetComponent<IDamageable>() != null)
                     {
                         SoundManager.instance.PlayAudioClip(ESoundType.EnemyHit, GetComponent<AudioSource>(),false);
                         obj.GetComponent<IDamageable>().TakeDmg(stats.Dmg);
+                        StartCoroutine(GetComponent<DmgPopUp>().ActivatePopUp(stats.Dmg, obj.gameObject));
                     }
                 }
             }

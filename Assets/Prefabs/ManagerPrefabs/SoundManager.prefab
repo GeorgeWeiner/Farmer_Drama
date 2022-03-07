@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1487408131846684497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1487408131846684503}
+  - component: {fileID: 1487408131846684496}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1487408131846684503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487408131846684497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1487408131846684496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487408131846684497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc670edf3703222469ca209b8bcd217d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voiceLineText: {fileID: 0}
+  soundEffects:
+  - soundType: 0
+    audioClip: {fileID: 8300000, guid: 5d55a161ed3fb95438b846a35abc7304, type: 3}
+    volume: 0.29
+    offSet: 0
+    isStackable: 0
+  - soundType: 10
+    audioClip: {fileID: 8300000, guid: 5b59f7794d698f291965963a17d2ddd8, type: 3}
+    volume: 0.34
+    offSet: 0
+    isStackable: 0
+  - soundType: 1
+    audioClip: {fileID: 8300000, guid: 1e4d54427c47a6e4a885bf9c2a736ef0, type: 3}
+    volume: 0.39
+    offSet: 0
+    isStackable: 0
+  - soundType: 3
+    audioClip: {fileID: 8300000, guid: 633dffc9cd1dd1f4086426e50893b78b, type: 3}
+    volume: 0.9
+    offSet: 0
+    isStackable: 1
+  - soundType: 11
+    audioClip: {fileID: 8300000, guid: 5b59f7794d698f291965963a17d2ddd8, type: 3}
+    volume: 0.22
+    offSet: 0
+    isStackable: 0
+  - soundType: 12
+    audioClip: {fileID: 8300000, guid: 69a04eaf03f12f04aa6c625408e26554, type: 3}
+    volume: 0.28
+    offSet: 0
+    isStackable: 0
+  - soundType: 13
+    audioClip: {fileID: 8300000, guid: 142be9c395cce5c40a850e415e5539a0, type: 3}
+    volume: 1
+    offSet: 0
+    isStackable: 0
+  - soundType: 7
+    audioClip: {fileID: 8300000, guid: e1eb864f4093c454fb16d05f02f0e560, type: 3}
+    volume: 0.35
+    offSet: 0
+    isStackable: 1
+  playerAttackSounds:
+  - soundType: 2
+    audioClip: {fileID: 8300000, guid: dfdbd03841a16b144a82f1e21c7bb160, type: 3}
+    volume: 0.25
+    offSet: 0
+    isStackable: 0
+  - soundType: 2
+    audioClip: {fileID: 8300000, guid: b5e2114e0fe7f2c488ca74729cec64b3, type: 3}
+    volume: 0.45
+    offSet: 0
+    isStackable: 0
+  - soundType: 0
+    audioClip: {fileID: 8300000, guid: a2dce5fb8496a8441902446cf11b4c41, type: 3}
+    volume: 0.5
+    offSet: 0
+    isStackable: 0
+  - soundType: 2
+    audioClip: {fileID: 8300000, guid: b5e2114e0fe7f2c488ca74729cec64b3, type: 3}
+    volume: 0.5
+    offSet: 0
+    isStackable: 1
+  voiceLines:
+  - soundType: 0
+    audioClip: {fileID: 8300000, guid: 2d4aa4733dde721a5a8b783b49b91ed6, type: 3}
+    volume: 1
+    offSet: 0
+    isStackable: 0
+    voicelineText: Eeeeugh. That stinks man, fuck.
+  - soundType: 0
+    audioClip: {fileID: 8300000, guid: 6edcb3c4433dbfb878130050a9e72af4, type: 3}
+    volume: 1
+    offSet: 0
+    isStackable: 0
+    voicelineText: 'I cant stand thorught that oida '
+  - soundType: 0
+    audioClip: {fileID: 8300000, guid: 3fa144f05d4e6b95ba8a067c3dc0148d, type: 3}
+    volume: 1
+    offSet: 0
+    isStackable: 0
+    voicelineText: ' i know nuts where iam'
+  - soundType: 0
+    audioClip: {fileID: 8300000, guid: d80a6cf875bd24181bf0851d262be217, type: 3}
+    volume: 1
+    offSet: 0
+    isStackable: 0
+    voicelineText: Eeeeugh. That stinks man, fuck.
+  - soundType: 0
+    audioClip: {fileID: 8300000, guid: ececfef0593f831978730ff16523cae7, type: 3}
+    volume: 0.74
+    offSet: 0
+    isStackable: 0
+    voicelineText: wheres my navigation thing
+  - soundType: 0
+    audioClip: {fileID: 8300000, guid: aa60df7fcc4c38917a0166bdcc8b19b0, type: 3}
+    volume: 1
+    offSet: 0
+    isStackable: 0
+    voicelineText: This is not the southcentral Station na ?
+  - soundType: 0
+    audioClip: {fileID: 8300000, guid: 6edcb3c4433dbfb878130050a9e72af4, type: 3}
+    volume: 1
+    offSet: 0
+    isStackable: 0
+    voicelineText: Eeeeugh. That stinks man, fuck.

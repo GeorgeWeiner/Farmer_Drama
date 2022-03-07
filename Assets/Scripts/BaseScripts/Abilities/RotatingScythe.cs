@@ -11,7 +11,7 @@ public class RotatingScythe : Upgrade
     public override void UpgradeFunction(GameObject player)
     {
         SpawnManager.instance.UpgradSelected = true;
-        if (SpawnManager.instance.ScytheCount <= 4)
+        if (SpawnManager.instance.ScytheCount < 4)
         {   
             var tempObj = Instantiate(scythe, SpawnManager.instance.SpawnPoints.position, Quaternion.identity);
             tempObj.transform.SetParent(SpawnManager.instance.SpawnPoints, true);
