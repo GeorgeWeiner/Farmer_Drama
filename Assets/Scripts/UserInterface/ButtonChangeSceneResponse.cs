@@ -7,7 +7,9 @@ public class ButtonChangeSceneResponse : MonoBehaviour, IButton
     [SerializeField] private string sceneName;
     public void ExecuteButtonFunctionality()
     {
+        WaveIndicator._waveCount = 0;
         ChangeScene();
+
     }
     private void ChangeScene()
     {
